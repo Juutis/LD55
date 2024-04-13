@@ -16,12 +16,27 @@ public class UIManager : MonoBehaviour
     private UITooltip uiTooltip;
 
 
+    [SerializeField]
+    private UIActionSlot weaponActionSlot;
+    [SerializeField]
+    private UIActionSlot dashActionSlot;
+
     int maxHealth = 20;
     void Start()
     {
         uiHealth.Init(maxHealth);
     }
 
+
+    public void WeaponCooldown(float cooldownDuration)
+    {
+        weaponActionSlot.Cooldown(cooldownDuration);
+    }
+
+    public void DashCooldown(float cooldownDuration)
+    {
+        dashActionSlot.Cooldown(cooldownDuration);
+    }
 
     public void AddHealth(int health)
     {
