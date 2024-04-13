@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -52,6 +53,21 @@ public class PlayerMovement : MonoBehaviour
     {
         var dir = new Vector2(horizontal, vertical).normalized;
         body.velocity = dir * speed;
+    }
+
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        Debug.Log(collider2D);
+        Debug.Log(collider2D.tag);
+        if (collider2D.tag == "PickupableItem")
+        {
+            PickupableItem pickupableItem = collider2D.GetComponent<PickupableItem>();
+            if (pickupableItem != null)
+            {
+                Inventory.main.AddItem(pickupableItem.Config);
+                pickupableItem.Kill();
+            }
+        }
     }
 
 }

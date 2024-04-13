@@ -7,4 +7,7 @@ public class InventoryItemConfig : ScriptableObject
 {
     public InventoryItemType Type;
     public Sprite Sprite;
+    public int Count = 1;
+
+    public bool IsStackable = false;
 }
