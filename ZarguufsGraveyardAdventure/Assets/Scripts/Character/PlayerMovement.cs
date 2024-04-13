@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public static PlayerMovement main;
+    void Awake()
+    {
+        main = this;
+    }
     private Rigidbody2D body;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
@@ -55,10 +61,9 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = dir * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D collider2D)
+    /*void OnTriggerEnter2D(Collider2D collider2D)
     {
-        Debug.Log(collider2D);
-        Debug.Log(collider2D.tag);
+        
         if (collider2D.tag == "PickupableItem")
         {
             PickupableItem pickupableItem = collider2D.GetComponent<PickupableItem>();
@@ -68,6 +73,6 @@ public class PlayerMovement : MonoBehaviour
                 pickupableItem.Kill();
             }
         }
-    }
+    }*/
 
 }

@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
     {
         if (itemConfig.IsStackable)
         {
-            UIInventorySlot stackSlot = slots.FirstOrDefault(slot => slot.Item.Type == itemConfig.Type);
+            UIInventorySlot stackSlot = slots.FirstOrDefault(slot => slot.Item != null && slot.Item.Type == itemConfig.Type);
             if (stackSlot != null)
             {
                 stackSlot.Item.AddStackableItemCount(itemConfig.Count);

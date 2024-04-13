@@ -25,9 +25,9 @@ public class UIInventoryItem : MonoBehaviour
         imgIcon.sprite = itemConfig.Sprite;
     }
 
-    public void AddStackableItemCount(int count)
+    public void AddStackableItemCount(int countAddition)
     {
-        this.count += count;
+        count += countAddition;
         name = $"{config.Type} #{count}";
         txtCount.text = $"{count}";
     }
