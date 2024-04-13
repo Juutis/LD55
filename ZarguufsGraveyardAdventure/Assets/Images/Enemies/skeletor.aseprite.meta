@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3808c94d4a163064db529c4041186bcc
+guid: 410ab77d96f5e014d8278f05bb7e8ade
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,10 +32,10 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 0
+    spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -71,7 +71,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -84,7 +84,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638486110603540726
+  platformSettingsDirtyTick: 638486229839025644
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: tilesheet1
+  - name: skeletor
     originalName: 
-    pivot: {x: 1.3617021, y: -1}
+    pivot: {x: 0.45454547, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 94
-      height: 128
-    spriteID: 787a5f219e81875458c594352449d7fc
+      width: 11
+      height: 14
+    spriteID: 1eb2d7d6c9defdc4c9cac05631ffabac
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1969546520
-    name: tilesheet1
+    guid: 179879977
+    name: skeletor
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: tilesheet1
+    - name: skeletor
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 128
-        width: 240
-        height: 128
-      spriteId: 787a5f219e81875458c594352449d7fc
+        x: 3
+        y: 0
+        width: 11
+        height: 14
+      spriteId: 1eb2d7d6c9defdc4c9cac05631ffabac
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -200,4 +200,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 16, y: 16}
