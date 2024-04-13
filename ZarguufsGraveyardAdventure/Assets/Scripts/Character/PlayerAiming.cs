@@ -16,7 +16,11 @@ public class PlayerAiming : MonoBehaviour
     private Animator animator;
 
 
-    private bool isSwinging = false;
+    [SerializeField]
+    private float cooldownDuration = 0.5f;
+    private float cooldownTimer = 0f;
+
+    private bool isOnCooldown = false;
 
 
     // Start is called before the first frame update
@@ -33,7 +37,7 @@ public class PlayerAiming : MonoBehaviour
         Vector3 targetDir = GetDirection();
         float angleDiff = Vector2.SignedAngle(hand.transform.right, targetDir);
         hand.transform.Rotate(Vector3.forward, angleDiff);
-        
+
         if (worldPosition.x < transform.position.x)
         {
             weaponRenderer.flipY = true;
@@ -43,25 +47,40 @@ public class PlayerAiming : MonoBehaviour
             weaponRenderer.flipY = false;
         }
 
+        if (isOnCooldown)
+        {
+            cooldownTimer += Time.deltaTime;
+            if (cooldownTimer >= cooldownDuration)
+            {
+                cooldownTimer = 0f;
+                isOnCooldown = false;
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("MouseButton 0");
-            if (isSwinging) {
+            if (isOnCooldown)
+            {
                 return;
             }
             SwingWeapon();
         }
     }
 
-    private void SwingWeapon() {
-        isSwinging = true;
+    private void SwingWeapon()
+    {
+        isOnCooldown = true;
+        cooldownTimer = 0f;
         Debug.Log("Swing");
         animator.Play("weaponSwing");
+        UIManager.main.WeaponCooldown(cooldownDuration);
     }
 
-    public void SwingAnimationFinished() {
+    public void SwingAnimationFinished()
+    {
         Debug.Log("anim finished");
-        isSwinging = false;
+        //isSwinging = false;
     }
 
 
