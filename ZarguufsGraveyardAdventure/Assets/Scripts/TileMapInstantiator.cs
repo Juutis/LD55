@@ -22,9 +22,6 @@ public class TileMapInstantiator : MonoBehaviour
             instanceTileMap.ResizeBounds();
             BoundsInt bounds = instanceTileMap.cellBounds;
             TileBase[] allTiles = instanceTileMap.GetTilesBlock(bounds);
-            Debug.Log($"{allTiles.Length}; ({bounds.min.x}, {bounds.min.y}) -> ({bounds.max.x}, {bounds.max.y})");
-            Debug.Log($"{allTiles.Where(x => x != null).Count()}");
-            Debug.Log($"{allTiles.Count()}");
 
             for (int xb = bounds.min.x; xb < bounds.max.x; xb++)
             {

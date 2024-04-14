@@ -32,15 +32,18 @@ public class GateTrigger : MonoBehaviour
             {
                 if (Input.GetKeyDown(keyCode))
                 {
-                    InventoryItemType? itemConfig = Inventory.main.CheckItem(Inventory.main.InventoryKeys[keyCode] - 1);
+                    InventoryItemConfig itemConfig = Inventory.main.CheckItem(Inventory.main.InventoryKeys[keyCode] - 1);
+                    Debug.Log($"Using inventory item {itemConfig.Type.ToString()} {itemConfig != null} {itemConfig.IsKey}");
 
-                    if (itemConfig != null && itemConfig == InventoryItemType.GateKey1)
+                    if (itemConfig != null && itemConfig.IsKey)
                     {
                         Inventory.main.TakeItem(Inventory.main.InventoryKeys[keyCode] - 1);
                         OpenGate();
                     }
                 }
             }
+
+            UIManager.main.ShowWorldTooltip("Press 1-8 to use a key.", transform.position);
         }
     }
 
@@ -62,11 +65,13 @@ public class GateTrigger : MonoBehaviour
         if (collision.tag == "Player")
         {
             playerIsAtGate = false;
+            UIManager.main.HideWorldTooltip();
         }
     }
 
     private void OpenGate()
     {
+        Debug.Log("Gate Opened");
         openGate.SetActive(true);
         closedGate.SetActive(false);
     }

@@ -60,7 +60,14 @@ public class PlayerItemPickup : MonoBehaviour
                     }
                     else
                     {
-                        itemWasPickedup = Inventory.main.AddItem(item.Config);
+                        if (item.Config.IsUnique)
+                        {
+                            itemWasPickedup = Inventory.main.AddUniqueItem(item.Config);
+                        }
+                        else
+                        {
+                            itemWasPickedup = Inventory.main.AddItem(item.Config);
+                        }
                     }
 
                     if (itemWasPickedup)

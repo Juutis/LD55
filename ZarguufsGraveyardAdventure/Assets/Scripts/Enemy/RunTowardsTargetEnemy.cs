@@ -29,6 +29,8 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     [SerializeField]
     private SpriteRenderer sprite;
 
+    private bool running = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,11 @@ public class RunTowardsTargetEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!running) {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+        
         runTowardsWaypoint();
 
         if (isFinalWaypoint() && GetDistanceToTarget() < targetRange)
@@ -72,6 +79,14 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         } else if (targetDirection.x < -0.1f) {
             sprite.flipX = false;
         }
+    }
+
+    public void StartRunning() {
+        running = true;
+    }
+
+    public void StopRunning() {
+        running = false;
     }
 
     public void EnableNavigation()

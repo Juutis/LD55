@@ -26,6 +26,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private UIInventoryItem itemPrefab;
 
+    private List<InventoryItemType> foundUniqueItems = new();
     private List<UIInventorySlot> slots = new();
 
     public Dictionary<KeyCode, int> InventoryKeys = new(){
@@ -65,7 +66,7 @@ public class Inventory : MonoBehaviour
         return slot.TakeItem();
     }
 
-    public InventoryItemType? CheckItem(int index)
+    public InventoryItemConfig CheckItem(int index)
     {
         if (index < 0 || index >= slots.Count)
         {
@@ -96,6 +97,22 @@ public class Inventory : MonoBehaviour
         item.Init(itemConfig);
         slot.SetItem(item);
         return true;
+    }
+
+    public bool AddUniqueItem(InventoryItemConfig itemConfig)
+    {
+        if (!foundUniqueItems.Contains(itemConfig.Type))
+        {
+            foundUniqueItems.Add(itemConfig.Type);
+        }
+
+        return AddItem(itemConfig);
+    }
+
+    public bool HasFoundUniqueItem(InventoryItemType type)
+    {
+        Debug.Log(string.Join(", ", foundUniqueItems));
+        return foundUniqueItems.Contains(type);
     }
 
 }

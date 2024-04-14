@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
     private List<ItemDropChance> itemDrops;
 
     [SerializeField]
+    private List<InventoryItemConfig> uniqueDrops;
+
+    [SerializeField]
     private float itemDropChance;
 
     public void GetHit(int damage)
@@ -24,21 +27,36 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Enemy died!");
-
-        if (Random.Range(0,1f) <= itemDropChance)
+        if (Random.Range(0,1f) <= itemDropChance && itemDrops.Count > 0)
         {
             List<InventoryItemConfig> itemChoices = new();
             foreach (ItemDropChance item in itemDrops)
             {
-                for (int i = 0; i < item.DropChanceMultiplier; i++)
+                // mult should be at least 1 to dodge possible bugs
+                int mult = Mathf.Max(item.DropChanceMultiplier, 0);
+
+                for (int i = 0; i < mult; i++)
                 {
                     itemChoices.Add(item.Item);
                 }
             }
 
             InventoryItemConfig drop = itemChoices[Random.Range(0, itemChoices.Count)];
-            PickupableItemManager.main.CreateItem(drop, transform.position);
+
+            Vector2 circlePos = Random.insideUnitCircle.normalized;
+            Vector3 pos = new(circlePos.x, circlePos.y, 0);
+
+            PickupableItemManager.main.CreateItem(drop, transform.position + pos);
+        }
+
+        foreach (InventoryItemConfig item in uniqueDrops)
+        {
+            if (!Inventory.main.HasFoundUniqueItem(item.Type))
+            {
+                Vector2 circlePos = Random.insideUnitCircle.normalized;
+                Vector3 pos = new(circlePos.x, circlePos.y, 0);
+                PickupableItemManager.main.CreateItem(item, transform.position + pos);
+            }
         }
 
         Destroy(gameObject);
