@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -45,6 +46,18 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void IncreaseMaxHP(float value)
+    {
+        float currentPercentage = (float)health / maxHealth;
+        maxHealth += Mathf.CeilToInt(value);
+        int newHealth = Mathf.CeilToInt(maxHealth * currentPercentage);
+        int change = newHealth - health;
+        Debug.Log($"Old [{maxHealth - value}] New [{maxHealth}]. % [{currentPercentage}] so {health} should become {newHealth} and change is {change}");
+        //Debug.Log($"increase max hp by {value} and hp by {change}");
+        UIManager.main.SetMaxHealth(maxHealth);
+        AddHealth(change);
+    }
+
     public bool AddHealth(int healthAddition)
     {
         if (healthAddition < 0 && isInvulnerable)
@@ -63,6 +76,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         health += healthAddition;
+        Debug.Log($"My health is now {health}");
         UIManager.main.AddHealth(healthAddition);
         if (health < 0)
         {

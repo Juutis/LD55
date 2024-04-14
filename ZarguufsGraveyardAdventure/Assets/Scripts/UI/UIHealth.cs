@@ -14,20 +14,30 @@ public class UIHealth : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI txtHealth;
 
-    public void Init(int maxHealth) {
+    public void Init(int maxHealth)
+    {
         this.maxHealth = maxHealth;
         SetHealth(maxHealth);
     }
 
-    public void AddHealth(int healthChange) {
+    public void AddHealth(int healthChange)
+    {
         SetHealth(health + healthChange);
     }
+    public void SetMaxHealth(int maxHealth)
+    {
+        this.maxHealth = maxHealth;
+        SetHealth(health);
+    }
 
-    private void SetHealth(int health) {
-        if (health < 0) {
+    private void SetHealth(int health)
+    {
+        if (health < 0)
+        {
             health = 0;
         }
-        else if (health > maxHealth) {
+        else if (health > maxHealth)
+        {
             health = maxHealth;
         }
         this.health = health;

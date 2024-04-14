@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,10 +16,8 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField]
     private GameObject hand;
     [SerializeField]
+    private GameObject weaponObject;
     private SpriteRenderer weaponRenderer;
-
-    [SerializeField]
-    private Animator animator;
 
     [SerializeField]
     private int damage = 2;
@@ -29,11 +28,22 @@ public class PlayerAiming : MonoBehaviour
     private float cooldownTimer = 0f;
 
     private bool isOnCooldown = false;
+    private bool isSwinging = false;
+
+    private float startingSwingPos = 0.4f;
+    private float targetSwingPos = 0.7f;
+
+    private float swingDuration = 0.1f;
+    private float swingTimer = 0f;
+
+    private Vector2 weaponStartPosition;
+    private Vector2 weaponTargetPosition;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        weaponRenderer = weaponObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -65,10 +75,23 @@ public class PlayerAiming : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (isSwinging)
+        {
+            swingTimer += Time.deltaTime;
+            weaponRenderer.transform.localPosition = Vector2.Lerp(weaponStartPosition, weaponTargetPosition, swingTimer / swingDuration);
+            if (swingTimer >= swingDuration)
+            {
+                isSwinging = false;
+                swingTimer = 0f;
+                weaponRenderer.transform.localPosition = weaponTargetPosition;
+                weaponObject.SetActive(false);
+            }
+        }
+
+        if (Input.GetMouseButton(0))
         {
             //Debug.Log("MouseButton 0");
-            if (isOnCooldown)
+            if (isSwinging || isOnCooldown)
             {
                 return;
             }
@@ -78,10 +101,13 @@ public class PlayerAiming : MonoBehaviour
 
     private void SwingWeapon()
     {
+        isSwinging = true;
+        weaponStartPosition = new Vector2(startingSwingPos, 0f);
+        weaponRenderer.transform.localPosition = weaponStartPosition;
+        weaponTargetPosition = new Vector2(targetSwingPos, 0f);
+        weaponObject.SetActive(true);
         isOnCooldown = true;
         cooldownTimer = 0f;
-        //        Debug.Log("Swing");
-        animator.Play("weaponSwing");
         UIManager.main.WeaponCooldown(cooldownDuration);
     }
 
@@ -97,4 +123,13 @@ public class PlayerAiming : MonoBehaviour
         return aimingReticule.transform.position - transform.position;
     }
 
+    internal void IncreaseWeaponRech(float value)
+    {
+        targetSwingPos += value;
+    }
+
+    internal void IncreaseWeaponDamage(float value)
+    {
+        damage += Mathf.CeilToInt(value);
+    }
 }

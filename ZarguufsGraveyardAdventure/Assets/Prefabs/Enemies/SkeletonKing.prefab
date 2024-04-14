@@ -366,6 +366,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: perkGroupPrefab
+      value: 
+      objectReference: {fileID: 5507525285660041521, guid: 743cb051df0911e4d9a7067014279b86, type: 3}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: uniqueDrops.Array.size
       value: 1
       objectReference: {fileID: 0}

@@ -38,11 +38,18 @@ public class PickupableItem : MonoBehaviour
 
     public void Highlight()
     {
-        highlightSpriteRenderer.enabled = true;
+        if (highlightSpriteRenderer != null)
+        {
+            highlightSpriteRenderer.enabled = true;
+        }
     }
     public void Unhighlight()
     {
-        highlightSpriteRenderer.enabled = false;
+        if (highlightSpriteRenderer != null)
+        {
+
+            highlightSpriteRenderer.enabled = false;
+        }
     }
 
     public bool IsHealth()
