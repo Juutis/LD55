@@ -28,13 +28,6 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UIActionSlot dashActionSlot;
 
-    int maxHealth = 20;
-    void Start()
-    {
-        uiHealth.Init(maxHealth);
-    }
-
-
     public void WeaponCooldown(float cooldownDuration)
     {
         weaponActionSlot.Cooldown(cooldownDuration);
@@ -48,6 +41,10 @@ public class UIManager : MonoBehaviour
     public void SetHealth(int health)
     {
         uiHealth.Init(health);
+    }
+    public void SetMaxHealth(int maxHealth)
+    {
+        uiHealth.SetMaxHealth(maxHealth);
     }
     public void AddHealth(int healthChange)
     {

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3828402581064304997}
-  - component: {fileID: 7849515491639526402}
   - component: {fileID: 8519347336493465344}
   m_Layer: 0
   m_Name: weapon
@@ -34,28 +33,6 @@ Transform:
   - {fileID: 8020490615098726318}
   m_Father: {fileID: 6096919138765079918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7849515491639526402
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283268090663853330}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6630f0ad0ec7c34449e88a0d5306a4d0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8519347336493465344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,8 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimingReticule: {fileID: 0}
   hand: {fileID: 5296718524486389193}
-  weaponRenderer: {fileID: 387286891151916015}
-  animator: {fileID: 7849515491639526402}
+  weaponObject: {fileID: 1287702569882341661}
   damage: 2
   cooldownDuration: 0.5
 --- !u!1 &1287702569882341661
@@ -176,6 +152,7 @@ GameObject:
   - component: {fileID: 3407389812370697865}
   - component: {fileID: 6881794051561634713}
   - component: {fileID: 8409624685643141973}
+  - component: {fileID: 2113614408962298201}
   m_Layer: 6
   m_Name: player
   m_TagString: Player
@@ -331,6 +308,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2113614408962298201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392652539679699869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e613208f54cc07740b0f107745dea03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5296718524486389193
 GameObject:
   m_ObjectHideFlags: 0

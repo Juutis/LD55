@@ -20,6 +20,8 @@ public class PlayerItemPickup : MonoBehaviour
 
     private List<PickupableItem> nearbyItems = new();
 
+    private bool toolTipShown = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -58,7 +60,7 @@ public class PlayerItemPickup : MonoBehaviour
                     }
                     else
                     {
-                         itemWasPickedup = Inventory.main.AddItem(item.Config);
+                        itemWasPickedup = Inventory.main.AddItem(item.Config);
                     }
 
                     if (itemWasPickedup)
@@ -89,6 +91,7 @@ public class PlayerItemPickup : MonoBehaviour
         if (nearbyItems.Count > 0)
         {
             UIManager.main.ShowPlayerTooltip($"Pick up ({pickupKey})");
+            toolTipShown = true;
             pickUpEnabled = true;
             foreach (PickupableItem item in nearbyItems)
             {
@@ -97,7 +100,11 @@ public class PlayerItemPickup : MonoBehaviour
         }
         else
         {
-            UIManager.main.HideTooltip();
+            if (toolTipShown)
+            {
+                UIManager.main.HideTooltip();
+            }
+            toolTipShown = false;
             pickUpEnabled = false;
         }
     }

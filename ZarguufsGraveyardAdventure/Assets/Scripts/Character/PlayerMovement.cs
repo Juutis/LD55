@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -135,4 +136,18 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = dir * currentSpeed;
     }
 
+    internal void ReduceDashCooldown(int value)
+    {
+        dashCooldownDuration -= value;
+    }
+
+    internal void IncreaseDashLength(int value)
+    {
+        dashSpeed += value;
+    }
+
+    internal void IncreaseWalkSpeed(int value)
+    {
+        speed += value;
+    }
 }
