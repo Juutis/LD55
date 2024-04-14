@@ -18,6 +18,7 @@ public class GateTrigger : MonoBehaviour
     private bool needsKey;
 
     private bool playerIsAtGate = false;
+    private bool isOpen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,10 @@ public class GateTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isOpen)
+        {
+            return;
+        }
         if (playerIsAtGate)
         {
             foreach (KeyCode keyCode in Inventory.main.InventoryKeys.Keys)
@@ -37,29 +42,32 @@ public class GateTrigger : MonoBehaviour
                 if (Input.GetKeyDown(keyCode))
                 {
                     InventoryItemConfig itemConfig = Inventory.main.CheckItem(Inventory.main.InventoryKeys[keyCode] - 1);
-                    // Debug.Log($"Using inventory item {itemConfig.Type.ToString()} {itemConfig != null} {itemConfig.IsKey}");
+                    //Debug.Log($"Using inventory item {itemConfig.Type.ToString()} {itemConfig != null} {itemConfig.IsKey}");
 
                     if (itemConfig != null && itemConfig.IsKey)
                     {
                         Inventory.main.TakeItem(Inventory.main.InventoryKeys[keyCode] - 1);
                         OpenGate();
+                        return;
                     }
                 }
             }
+
+            UIManager.main.ShowWorldTooltip("Press 1-8 to use a key.", transform.position);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isOpen)
+        {
+            return;
+        }
         if (collision.tag == "Player")
         {
             if (!needsKey)
             {
                 OpenGate();
-            }
-            else
-            {
-                UIManager.main.ShowWorldTooltip("Press 1-4 to use a key.", transform.position);
             }
 
             playerIsAtGate = true;
@@ -68,6 +76,10 @@ public class GateTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (isOpen)
+        {
+            return;
+        }
         if (collision.tag == "Player")
         {
             playerIsAtGate = false;
@@ -77,8 +89,10 @@ public class GateTrigger : MonoBehaviour
 
     private void OpenGate()
     {
+        Debug.Log("Gate Opened");
         openGate.SetActive(true);
         closedGate.SetActive(false);
+        isOpen = true;
         UIManager.main.HideWorldTooltip();
         doorTrigger.enabled = false;
     }

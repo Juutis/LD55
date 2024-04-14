@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2369652869146400418
+--- !u!1001 &3514083095528070867
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -51,14 +51,14 @@ PrefabInstance:
     - target: {fileID: 3078986580085054408, guid: 7bb7eb76eb3e7cf45bd7faae1f5d4546, type: 3}
       propertyPath: config
       value: 
-      objectReference: {fileID: 11400000, guid: e3cf3c776e60b2e43b7f03ba3c1eb5c8, type: 2}
+      objectReference: {fileID: 11400000, guid: 27a45df9aee4e704cb86a1b70c8ef4ca, type: 2}
     - target: {fileID: 3078986580085054408, guid: 7bb7eb76eb3e7cf45bd7faae1f5d4546, type: 3}
       propertyPath: initMyself
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4456371883408728895, guid: 7bb7eb76eb3e7cf45bd7faae1f5d4546, type: 3}
       propertyPath: m_Name
-      value: PickupableHandItem
+      value: PickupableKeyboss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
