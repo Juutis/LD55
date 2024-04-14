@@ -143,14 +143,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 32}
   - name: skeletonking_hand_Frame_1
     originalName: 
-    pivot: {x: 0.43118888, y: 0.8543584}
+    pivot: {x: 0.48267254, y: 0.7503951}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 17
-      width: 5
+      width: 6
       height: 7
     spriteID: 8ca578549a43a4e45b2f39e480d0db18
     spriteBone: []
@@ -221,9 +221,9 @@ ScriptedImporter:
     - name: skeletonking_hand_Frame_1
       frameIndex: 1
       cellRect:
-        x: 6
+        x: 5
         y: 4
-        width: 5
+        width: 6
         height: 7
       spriteId: 8ca578549a43a4e45b2f39e480d0db18
     - name: skeletonking_hand_Frame_2

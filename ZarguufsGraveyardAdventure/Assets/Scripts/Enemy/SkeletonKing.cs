@@ -83,13 +83,23 @@ public class SkeletonKing : MonoBehaviour
     }
 
     void LateUpdate() {
+        var faceDir = target.position - transform.position;
+        if (faceDir.x < -0.1f) {
+            swordContainer.localScale = new Vector3(1, 1, 1);
+            handContainer.localScale = new Vector3(-1, 1, 1);
+        }
+        if (faceDir.x > 0.1f) {
+            swordContainer.localScale = new Vector3(-1, 1, 1);
+            handContainer.localScale = new Vector3(1, 1, 1);
+        }
+
         if (state == SkeletonKingState.ATTACK1 || state == SkeletonKingState.ATTACK3) {
-            Vector2 targetDir = target.position - transform.position;
+            Vector2 targetDir = target.position - swordContainer.position;
             float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90;
             swordContainer.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-        if (state == SkeletonKingState.CAST1 || state == SkeletonKingState.CAST3) {
-            Vector2 targetDir = target.position - transform.position;
+        if (state == SkeletonKingState.CAST2 || state == SkeletonKingState.CAST3) {
+            Vector2 targetDir = target.position - handContainer.position;
             float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90;
             handContainer.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
@@ -122,7 +132,7 @@ public class SkeletonKing : MonoBehaviour
     }
 
     private void attackRoutine2() {
-        navigation.StartRunning();
+        navigation.StopRunning();
         animator.PlayCustomAnimation("attack2");
     }
 
@@ -190,8 +200,18 @@ public class SkeletonKing : MonoBehaviour
     public void ShootProjectile() {
         var isHoming = state == SkeletonKingState.CAST3;
         var newProj = Instantiate(projectile);
-        newProj.transform.position = projectileRoot.position;
+        newProj.transform.position = spellRoot.position;
         newProj.Init(target, isHoming);
+    }
+
+    public void ShootProjectiles() {
+        int projectiles = 16;
+        for(int i = 0; i < projectiles; i++) {
+            var targetDir = Quaternion.AngleAxis(360f / projectiles * i, Vector3.forward) * Vector3.up;
+            var newProj = Instantiate(projectile);
+            newProj.transform.position = spellRoot.position;
+            newProj.Init(spellRoot.position + targetDir);
+        }
     }
 
     private SkeletonKingState nextAttack() {
@@ -204,10 +224,10 @@ enum SkeletonKingState {
     SPAWN,
     IDLE,
     ENGAGE,
-    ATTACK1,
-    ATTACK2,
-    ATTACK3,
-    CAST1,
-    CAST2,
-    CAST3
+    ATTACK1, // poke
+    ATTACK2, // spin
+    ATTACK3, // sweep + range attack
+    CAST1, // shoot multiple projectiles around self
+    CAST2, // shoot 3 projectiles towards player
+    CAST3 // shoot a single homing projectile towards player
 }

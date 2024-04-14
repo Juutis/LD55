@@ -31,9 +31,8 @@ public class Projectile : MonoBehaviour
     public void Init(Transform target, bool trackEnemy) {
         if (trackEnemy) {
             targetTransform = target;
-        } else {
-            targetDirection = target.position - transform.position;
         }
+        targetDirection = target.position - transform.position;
         rotateTowardsTarget();
     }
 
@@ -46,12 +45,20 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         if (targetTransform != null) {
-            targetDirection = targetTransform.position - transform.position;
+            var newTargetDir = targetTransform.position - transform.position;
+            var angleDiff = Vector2.SignedAngle(targetDirection, newTargetDir);
+            angleDiff = Mathf.Clamp(angleDiff, -Time.deltaTime * 90, Time.deltaTime * 90);
+            var rotation = Quaternion.AngleAxis(angleDiff, Vector3.forward);
+            targetDirection = rotation * targetDirection;
 
             if (Vector2.Distance(transform.position, targetTransform.position) < stopTrackingDistance) {
                 targetTransform = null;
             }
+            if (Time.time - spawned > 2.0f) {
+                targetTransform = null;
+            }
         }
+        rotateTowardsTarget();
 
         if(Time.time - spawned > maxLifeTime) {
             Destroy(gameObject);
