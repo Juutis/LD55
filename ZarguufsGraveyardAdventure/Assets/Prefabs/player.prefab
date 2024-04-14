@@ -72,6 +72,7 @@ MonoBehaviour:
   hand: {fileID: 5296718524486389193}
   weaponRenderer: {fileID: 387286891151916015}
   animator: {fileID: 7849515491639526402}
+  cooldownDuration: 0.5
 --- !u!1 &1287702569882341661
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +174,7 @@ GameObject:
   - component: {fileID: 3407389812370697865}
   - component: {fileID: 6881794051561634713}
   - component: {fileID: 8409624685643141973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,6 +212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3179306531765108731}
   speed: 5
+  dashSpeed: 10
+  dashKey: 32
 --- !u!114 &7331939582090544572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +254,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &6881794051561634713
 Animator:
   serializedVersion: 7
