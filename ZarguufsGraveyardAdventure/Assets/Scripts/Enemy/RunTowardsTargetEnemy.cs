@@ -36,6 +36,9 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     private SpriteRenderer sprite;
 
     private bool running = true;
+    private bool isKnockedBack = false;
+    private float knockBackDuration = 0.2f;
+    private float knockBackTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -53,15 +56,33 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        knockBackTimer += Time.deltaTime;
+        if (knockBackTimer > knockBackDuration)
+        {
+            knockBackTimer = 0f;
+            isKnockedBack = false;
+        }
+    }
+
+    public void KnockBack(float strength, float duration)
+    {
+        knockBackDuration = duration;
+        rb.velocity = -rb.velocity * strength;
+        isKnockedBack = true;
     }
 
     void FixedUpdate()
     {
-        if (!running) {
+        if (isKnockedBack)
+        {
+            return;
+        }
+        if (!running)
+        {
             rb.velocity = Vector2.zero;
             return;
         }
-        
+
         runTowardsWaypoint();
 
         if ((!HasLOSToTarget() && GetDistanceToTarget() > smellRange) || GetDistanceToTarget() > aggroRange)
@@ -86,18 +107,23 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         }
 
         Vector2 targetDirection = target.position - transform.position;
-        if (targetDirection.x > 0.1f) {
+        if (targetDirection.x > 0.1f)
+        {
             sprite.flipX = true;
-        } else if (targetDirection.x < -0.1f) {
+        }
+        else if (targetDirection.x < -0.1f)
+        {
             sprite.flipX = false;
         }
     }
 
-    public void StartRunning() {
+    public void StartRunning()
+    {
         running = true;
     }
 
-    public void StopRunning() {
+    public void StopRunning()
+    {
         running = false;
     }
 

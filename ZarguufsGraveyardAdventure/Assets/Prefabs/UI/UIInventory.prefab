@@ -91,6 +91,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56d5015e475eeae4ea63361a5d782a8a, type: 2}
   - {fileID: 11400000, guid: 112c933928f85f449a608ca1981f3ebf, type: 2}
   - {fileID: 11400000, guid: 428ee33948e54034788c059067585f3d, type: 2}
-  size: 8
+  size: 4
   slotPrefab: {fileID: 7401448015344171328, guid: 007ec42f23231014f8c4a880f680b0fc, type: 3}
   itemPrefab: {fileID: 16991143820155175, guid: 3947f5e2651bb004db2c81dc596e2914, type: 3}

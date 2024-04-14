@@ -93,6 +93,7 @@ public class Pentagram : MonoBehaviour
             if (filledSlots.Count == 0)
             {
                 Invoke("SummonBoss", bossSummonDelay);
+                isSummoning = false;
             }
         }
     }
@@ -102,7 +103,7 @@ public class Pentagram : MonoBehaviour
         GameObject bossInstance = Instantiate(chosenRecipe.BossPrefab);
         bossInstance.transform.position = bossSpawnPosition.position;
         chosenRecipe = null;
-        isSummoning = false;
+
         recipeIsChosen = false;
     }
 

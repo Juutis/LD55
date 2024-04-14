@@ -49,16 +49,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 1.2
   perkBag:
+  - Config: {fileID: 11400000, guid: cdcc2821594c20c45a920b48f65c443b, type: 2}
+    Count: 20
+  - Config: {fileID: 11400000, guid: 202df5e66c202be4dba6883c080b8a45, type: 2}
+    Count: 10
   - Config: {fileID: 11400000, guid: 8106662d4eb2cfb4b8c9526944d4199f, type: 2}
     Count: 5
   - Config: {fileID: 11400000, guid: 8b0e9c9131f49cd41af7e302589c617a, type: 2}
     Count: 5
+  - Config: {fileID: 11400000, guid: b89dbe3d7d3b35641a611b7c87c78433, type: 2}
+    Count: 2
   - Config: {fileID: 11400000, guid: d473132d0d2d988458e5125aba928057, type: 2}
     Count: 1
   - Config: {fileID: 11400000, guid: 9fbac4fc07fbeb34d9bcfc538a0ec643, type: 2}
     Count: 1
-  - Config: {fileID: 11400000, guid: 202df5e66c202be4dba6883c080b8a45, type: 2}
-    Count: 10
   keyCode: 101
 --- !u!1001 &1275332082921861115
 PrefabInstance:

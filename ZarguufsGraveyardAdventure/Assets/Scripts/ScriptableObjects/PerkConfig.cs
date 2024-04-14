@@ -20,6 +20,7 @@ public enum PerkType
     None,
     WeaponDamage,
     WeaponReach,
+    WeaponKnockback,
     DashLength,
     DashCooldown,
     Health,

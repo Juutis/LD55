@@ -22,6 +22,12 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField]
     private int damage = 2;
     public int Damage { get { return damage; } }
+    [SerializeField]
+    private float knockbackStrength = 5f;
+    public float KnockbackStrength { get { return knockbackStrength; } }
+    [SerializeField]
+    private float knockbackDuration = 0.2f;
+    public float KnockbackDuration { get { return knockbackDuration; } }
 
     [SerializeField]
     private float cooldownDuration = 0.5f;
@@ -123,9 +129,13 @@ public class PlayerAiming : MonoBehaviour
         return aimingReticule.transform.position - transform.position;
     }
 
-    internal void IncreaseWeaponRech(float value)
+    internal void IncreaseWeaponReach(float value)
     {
         targetSwingPos += value;
+    }
+    internal void IncreaseWeaponKnockback(float value)
+    {
+        knockbackStrength += value;
     }
 
     internal void IncreaseWeaponDamage(float value)
