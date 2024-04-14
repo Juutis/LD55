@@ -66,7 +66,6 @@ public class RunTowardsTargetEnemy : MonoBehaviour
 
         if ((!HasLOSToTarget() && GetDistanceToTarget() > smellRange) || GetDistanceToTarget() > aggroRange)
         {
-            Debug.Log($"{!HasLOSToTarget()} {GetDistanceToTarget() > aggroRange}");
             rb.velocity = Vector2.zero;
             return;
         }

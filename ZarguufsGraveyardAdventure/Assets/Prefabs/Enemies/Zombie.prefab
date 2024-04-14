@@ -12,6 +12,26 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 209d741767a1815418d03fb5a41694de, type: 2}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: health
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: itemDropChance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: itemDrops.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: itemDrops.Array.data[0].Item
+      value: 
+      objectReference: {fileID: 11400000, guid: 79e27c12cd7b90148a023555b99d9b71, type: 2}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: itemDrops.Array.data[0].DropChanceMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4739832594945053203, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: m_Name
       value: Zombie
@@ -63,6 +83,14 @@ PrefabInstance:
     - target: {fileID: 9100442849730787314, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: speed
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100442849730787314, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: aggroRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100442849730787314, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: smellRange
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
