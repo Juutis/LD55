@@ -14,6 +14,7 @@ public class PickupableItem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private SpriteRenderer highlightSpriteRenderer;
+    private PentagramSlot slot;
 
     public void Init(InventoryItemConfig config)
     {
@@ -22,8 +23,16 @@ public class PickupableItem : MonoBehaviour
         highlightSpriteRenderer.sprite = config.Sprite;
     }
 
+    public void SetSlot(PentagramSlot slot)
+    {
+        this.slot = slot;
+    }
     public void Kill()
     {
+        if (slot != null)
+        {
+            slot.Clear();
+        }
         Destroy(gameObject);
     }
 
