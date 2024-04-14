@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         isInvulnerable = true;
         invulnerabilityDuration = invulnerabilityDurationFromDash;
         invulnerabilityTimer = 0f;
-        Debug.Log("Cant die!!");
+
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 isInvulnerable = false;
                 invulnerabilityTimer = 0f;
-                Debug.Log("Not anymore!");
+
             }
         }
     }

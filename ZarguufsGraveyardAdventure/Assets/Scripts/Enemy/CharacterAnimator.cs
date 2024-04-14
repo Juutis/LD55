@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,5 +24,9 @@ public class CharacterAnimator : MonoBehaviour
 
     public void Walk() {
         anim.Play("walk");
+    }
+
+    public void PlayCustomAnimation(String animName) {
+        anim.Play("animName");
     }
 }

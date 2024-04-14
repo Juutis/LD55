@@ -27,6 +27,9 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     private int waypointIndex = 0;
     private float waypointDistanceCheckEpsilon = 0.1f;
 
+    [SerializeField]
+    private SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,13 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         else
         {
             animator.Idle();
+        }
+
+        Vector2 targetDirection = target.position - transform.position;
+        if (targetDirection.x > 0.1f) {
+            sprite.flipX = true;
+        } else if (targetDirection.x < -0.1f) {
+            sprite.flipX = false;
         }
     }
 

@@ -175,6 +175,7 @@ MonoBehaviour:
   speed: 1
   targetRange: 0.1
   target: {fileID: 0}
+  sprite: {fileID: 5532712681583304942}
 --- !u!50 &6616515880887744156
 Rigidbody2D:
   serializedVersion: 4
