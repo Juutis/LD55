@@ -12,6 +12,9 @@ public class GateTrigger : MonoBehaviour
     private GameObject openGate;
 
     [SerializeField]
+    private BoxCollider2D doorTrigger;
+
+    [SerializeField]
     private bool needsKey;
 
     private bool playerIsAtGate = false;
@@ -21,6 +24,7 @@ public class GateTrigger : MonoBehaviour
     {
         openGate.SetActive(false);
         closedGate.SetActive(true);
+        doorTrigger.enabled = true;
     }
 
     // Update is called once per frame
@@ -33,7 +37,7 @@ public class GateTrigger : MonoBehaviour
                 if (Input.GetKeyDown(keyCode))
                 {
                     InventoryItemConfig itemConfig = Inventory.main.CheckItem(Inventory.main.InventoryKeys[keyCode] - 1);
-                    Debug.Log($"Using inventory item {itemConfig.Type.ToString()} {itemConfig != null} {itemConfig.IsKey}");
+                    // Debug.Log($"Using inventory item {itemConfig.Type.ToString()} {itemConfig != null} {itemConfig.IsKey}");
 
                     if (itemConfig != null && itemConfig.IsKey)
                     {
@@ -42,8 +46,6 @@ public class GateTrigger : MonoBehaviour
                     }
                 }
             }
-
-            UIManager.main.ShowWorldTooltip("Press 1-8 to use a key.", transform.position);
         }
     }
 
@@ -54,6 +56,10 @@ public class GateTrigger : MonoBehaviour
             if (!needsKey)
             {
                 OpenGate();
+            }
+            else
+            {
+                UIManager.main.ShowWorldTooltip("Press 1-4 to use a key.", transform.position);
             }
 
             playerIsAtGate = true;
@@ -71,8 +77,9 @@ public class GateTrigger : MonoBehaviour
 
     private void OpenGate()
     {
-        Debug.Log("Gate Opened");
         openGate.SetActive(true);
         closedGate.SetActive(false);
+        UIManager.main.HideWorldTooltip();
+        doorTrigger.enabled = false;
     }
 }

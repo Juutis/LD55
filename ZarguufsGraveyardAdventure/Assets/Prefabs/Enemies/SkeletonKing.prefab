@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 09aa60c976453774e87772eab88526aa, type: 2}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: perkGroupPrefab

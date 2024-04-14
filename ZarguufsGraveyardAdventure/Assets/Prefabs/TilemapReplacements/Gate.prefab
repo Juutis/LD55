@@ -900,4 +900,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closedGate: {fileID: 8613356911637455994}
   openGate: {fileID: 322968132615878166}
+  doorTrigger: {fileID: 1180895136733888508}
   needsKey: 1
