@@ -148,6 +148,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16341203, y: 1.4375}
   m_EdgeRadius: 0
+--- !u!1 &5090441636906809606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5777323033422177375}
+  m_Layer: 0
+  m_Name: Projectile Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5777323033422177375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090441636906809606}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.114899755, w: 0.99337715}
+  m_LocalPosition: {x: -0.29961076, y: 0.912487, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6553324243248547967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5777398549786963595
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5933284294754790457}
+  - {fileID: 5777323033422177375}
   m_Father: {fileID: 598866739917201035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2128311384709465362
@@ -294,3 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordContainer: {fileID: 6553324243248547967}
+  projectile: {fileID: 8112089146178761263, guid: 1da6e06a5fde257459766a09327cfc7c, type: 3}
+  bigProjectile: {fileID: 8112089146178761263, guid: 1da6e06a5fde257459766a09327cfc7c, type: 3}
+  projectileRoot: {fileID: 5777323033422177375}

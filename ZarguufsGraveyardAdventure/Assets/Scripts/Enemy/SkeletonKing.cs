@@ -20,6 +20,15 @@ public class SkeletonKing : MonoBehaviour
     [SerializeField]
     private Transform swordContainer;
 
+    [SerializeField]
+    private Projectile projectile;
+
+    [SerializeField]
+    private Projectile bigProjectile;
+
+    [SerializeField]
+    private Transform projectileRoot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +58,14 @@ public class SkeletonKing : MonoBehaviour
             case SkeletonKingState.ATTACK2:
                 attackRoutine2();
                 break;
+            case SkeletonKingState.ATTACK3:
+                attackRoutine3();
+                break;
         }
     }
 
     void LateUpdate() {
-        if (state == SkeletonKingState.ATTACK1) {
+        if (state == SkeletonKingState.ATTACK1 || state == SkeletonKingState.ATTACK3) {
             Vector2 targetDir = target.position - transform.position;
             float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90;
             swordContainer.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -91,6 +103,11 @@ public class SkeletonKing : MonoBehaviour
         animator.PlayCustomAnimation("attack2");
     }
 
+    private void attackRoutine3() {
+        navigation.StopRunning();
+        animator.PlayCustomAnimation("attack3");
+    }
+
     public void SpawnCallback() {
         animator.Idle();
         state = SkeletonKingState.IDLE;
@@ -105,6 +122,9 @@ public class SkeletonKing : MonoBehaviour
             case SkeletonKingState.ATTACK2:
                 idleTimer = Time.time + 0.8f;
                 break;
+            case SkeletonKingState.ATTACK3:
+                idleTimer = Time.time + 0.2f;
+                break;
         }
         state = SkeletonKingState.IDLE;
     }
@@ -113,21 +133,20 @@ public class SkeletonKing : MonoBehaviour
         state = SkeletonKingState.SPAWN;
     }
 
-    private SkeletonKingState prevAttack = SkeletonKingState.ATTACK2;
-    private float changeAttackChance = 0.5f;
+    public void ShootShockWave() {
+        var newProj = Instantiate(bigProjectile);
+        newProj.transform.position = projectileRoot.position;
+        newProj.Init(target, false);
+    }
 
     private SkeletonKingState nextAttack() {
-        if (Random.Range(0.0f, 1.0f) < changeAttackChance) {
-            changeAttackChance += 0.1f;
-            if (prevAttack == SkeletonKingState.ATTACK1) {
-                prevAttack = SkeletonKingState.ATTACK2;
-                return SkeletonKingState.ATTACK2;
-            } else {
-                prevAttack = SkeletonKingState.ATTACK1;
-                return SkeletonKingState.ATTACK1;
-            }
+        var t = Random.Range(0.0f, 1.0f);
+        if (t < 0.3f) {
+            return SkeletonKingState.ATTACK1;
+        } else if (t < 0.6) {
+            return SkeletonKingState.ATTACK2;
         } else {
-            return prevAttack;
+            return SkeletonKingState.ATTACK3;
         }
     }
 }
@@ -137,6 +156,6 @@ enum SkeletonKingState {
     IDLE,
     ENGAGE,
     ATTACK1,
-    ATTACK2
-
+    ATTACK2,
+    ATTACK3
 }
