@@ -130,5 +130,6 @@ public enum InventoryItemType
     Ectoplasm = 20,
     GateKey1 = 30,
     GateKey2 = 40,
-    GateKey3 = 50
+    GateKey3 = 50,
+    Heart = 60,
 }

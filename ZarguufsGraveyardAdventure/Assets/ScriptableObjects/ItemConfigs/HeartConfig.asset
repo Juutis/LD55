@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0cc58ae767c54947bd399e1658600bd, type: 3}
-  m_Name: BoneConfig
+  m_Name: HeartConfig
   m_EditorClassIdentifier: 
-  Type: 10
-  Sprite: {fileID: 421581823, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  Type: 60
+  Sprite: {fileID: -1948830737, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Count: 1
-  IsStackable: 0
+  IsStackable: 1
+  IsHealth: 1

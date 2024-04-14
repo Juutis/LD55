@@ -57,6 +57,11 @@ public class PlayerHealth : MonoBehaviour
             invulnerabilityTimer = 0f;
             invulnerabilityDuration = invulnerabilityDurationFromDamage;
         }
+        if (healthAddition > 0 && health == maxHealth)
+        {
+            return false;
+        }
+
         health += healthAddition;
         UIManager.main.AddHealth(healthAddition);
         if (health < 0)
