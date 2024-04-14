@@ -11,7 +11,7 @@ public class PerkConfig : ScriptableObject
     [TextArea]
     public string Description;
 
-    public int Value = 1;
+    public float Value = 1;
 }
 
 

@@ -31,7 +31,7 @@ public class PlayerAiming : MonoBehaviour
     private bool isSwinging = false;
 
     private float startingSwingPos = 0.4f;
-    private float targetSwingPos = 0.6f;
+    private float targetSwingPos = 0.7f;
 
     private float swingDuration = 0.1f;
     private float swingTimer = 0f;
@@ -88,7 +88,7 @@ public class PlayerAiming : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             //Debug.Log("MouseButton 0");
             if (isSwinging || isOnCooldown)
@@ -123,13 +123,13 @@ public class PlayerAiming : MonoBehaviour
         return aimingReticule.transform.position - transform.position;
     }
 
-    internal void IncreaseWeaponRech(int value)
+    internal void IncreaseWeaponRech(float value)
     {
         targetSwingPos += value;
     }
 
-    internal void IncreaseWeaponDamage(int value)
+    internal void IncreaseWeaponDamage(float value)
     {
-        damage += value;
+        damage += Mathf.CeilToInt(value);
     }
 }
