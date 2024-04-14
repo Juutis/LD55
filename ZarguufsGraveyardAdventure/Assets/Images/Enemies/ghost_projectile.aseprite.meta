@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d9e817d1e8eb32409f1d1a19f50932b
+guid: a14a78832ae05d6449d751e681ee8d03
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -80,7 +80,7 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 0
+    generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
@@ -93,11 +93,11 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 0
+    generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638486922180031855
+  platformSettingsDirtyTick: 638486920079531984
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: "g\xF6st"
+  - name: ghost_projectile
     originalName: 
-    pivot: {x: 0.45454547, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 11
-      height: 15
-    spriteID: 2271237ec583f0b4c8223c9446045c09
+      width: 15
+      height: 5
+    spriteID: ce9e72ba3a0b3e747b13227aacc07f67
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,18 +141,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: "g\xF6st_Frame_1"
+  - name: ghost_projectile_Frame_1
     originalName: 
-    pivot: {x: 0.45454547, y: -0.06666667}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 27
-      width: 11
-      height: 15
-    spriteID: 07b7835c722e8c241ad9b4cbeca90a29
+      y: 17
+      width: 15
+      height: 5
+    spriteID: ed9993413101bc04ba051d25b5cdb3e5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,32 +160,60 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 27}
+    uvTransform: {x: 4, y: 17}
+  - name: ghost_projectile_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 30
+      width: 15
+      height: 5
+    spriteID: b77091ad3ece6aa4c9a4ea13354385bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 30}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -2111050140
-    name: "g\xF6st"
+    guid: 762295893
+    name: ghost_projectile
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: "g\xF6st_Frame_0"
+    - name: ghost_projectile_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
-        y: 0
-        width: 11
-        height: 15
-      spriteId: 2271237ec583f0b4c8223c9446045c09
-    - name: "g\xF6st_Frame_1"
+        x: 0
+        y: 5
+        width: 15
+        height: 5
+      spriteId: ce9e72ba3a0b3e747b13227aacc07f67
+    - name: ghost_projectile_Frame_1
       frameIndex: 1
       cellRect:
-        x: 3
-        y: 1
-        width: 11
-        height: 15
-      spriteId: 07b7835c722e8c241ad9b4cbeca90a29
+        x: 0
+        y: 5
+        width: 15
+        height: 5
+      spriteId: ed9993413101bc04ba051d25b5cdb3e5
+    - name: ghost_projectile_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 5
+        width: 15
+        height: 5
+      spriteId: b77091ad3ece6aa4c9a4ea13354385bf
     linkedCells: []
     parentIndex: -1
   platformSettings:

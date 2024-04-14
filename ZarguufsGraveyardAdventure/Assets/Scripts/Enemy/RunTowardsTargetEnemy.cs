@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,9 @@ public class RunTowardsTargetEnemy : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1.0f;
+
+    [SerializeField]
+    private float targetRange = 0.1f;
 
     [SerializeField]
     private Transform target;
@@ -38,6 +42,12 @@ public class RunTowardsTargetEnemy : MonoBehaviour
 
     void FixedUpdate() {
         runTowardsWaypoint();
+
+        if (isFinalWaypoint() && GetDistanceToTarget() < targetRange) {
+            rb.velocity = Vector2.zero;
+        }
+
+
         if (rb.velocity.magnitude > 0.1f) {
             animator.Walk();
         } else {
@@ -52,6 +62,28 @@ public class RunTowardsTargetEnemy : MonoBehaviour
 
     public void DisableNavigation() {
         navigationActive = false;
+    }
+
+    public float GetDistanceToTarget() {
+        if (path == null || path.corners == null || path.corners.Length == 0) {
+            return float.MaxValue;
+        }
+        var distanceSum = 0.0f;
+        var nextWaypoint = waypointIndex;
+        distanceSum += Vector2.Distance(transform.position, path.corners[nextWaypoint]);
+        nextWaypoint++;
+        while (nextWaypoint < path.corners.Length) {
+            distanceSum += Vector2.Distance(path.corners[nextWaypoint - 1], path.corners[nextWaypoint]);
+            nextWaypoint++;
+        }
+        return distanceSum;
+    }
+
+    public bool HasLOSToTarget() {
+        if (path == null || path.corners == null || path.corners.Length == 0) {
+            return false;
+        }
+        return isFinalWaypoint();
     }
 
     private void updatePathing() {

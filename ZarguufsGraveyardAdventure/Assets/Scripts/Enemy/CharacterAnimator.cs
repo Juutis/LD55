@@ -15,7 +15,6 @@ public class CharacterAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Walk();
     }
 
     public void Idle() {
