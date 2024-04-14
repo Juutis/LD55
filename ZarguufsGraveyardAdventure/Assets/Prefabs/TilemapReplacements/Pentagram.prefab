@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
+  - RequiredItems: 5000000050000000500000005000000050000000
+    BossType: 4
+    BossPrefab: {fileID: 4456371883408728895, guid: a46bcd27d5b7b0d459fdaf708d9a9a3b, type: 3}
   - RequiredItems: 0a0000000a0000000a0000000a0000000a000000
     BossType: 1
     BossPrefab: {fileID: 6651257326730974977, guid: a06016a90d4385044b3339040c75a94b, type: 3}

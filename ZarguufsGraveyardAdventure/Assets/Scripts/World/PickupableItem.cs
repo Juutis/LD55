@@ -14,10 +14,21 @@ public class PickupableItem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private SpriteRenderer highlightSpriteRenderer;
+    [SerializeField]
+    private bool initMyself;
     private PentagramSlot slot;
 
     private bool isLocked = false;
     public bool IsLocked { get { return isLocked; } }
+
+    private void Start()
+    {
+        if (initMyself)
+        {
+            Init(config);
+            PickupableItemManager.main.ActivateItem(this);
+        }
+    }
 
     public void Init(InventoryItemConfig config)
     {

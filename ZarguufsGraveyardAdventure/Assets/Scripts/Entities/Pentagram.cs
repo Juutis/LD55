@@ -142,7 +142,8 @@ public enum BossType
     None,
     BoneBoss,
     DemonBoss,
-    NoseBoss
+    NoseBoss,
+    Key
 }
 
 [System.Serializable]

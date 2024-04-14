@@ -126,4 +126,6 @@ public enum InventoryItemType
     GateKey3 = 50,
     Heart = 60,
     Eye = 70,
+    Hand = 80,
+    StartKey = 90,
 }

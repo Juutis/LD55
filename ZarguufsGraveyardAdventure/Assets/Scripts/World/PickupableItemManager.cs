@@ -30,6 +30,11 @@ public class PickupableItemManager : MonoBehaviour
         return item;
     }
 
+    public void ActivateItem(PickupableItem item)
+    {
+        AddItem(item);
+    }
+
 
     public List<PickupableItem> CloseItems(Vector3 position, float maxDistance)
     {
