@@ -54,6 +54,15 @@ public class UIInventorySlot : MonoBehaviour
         }
         return itemConfig;
     }
+
+    public InventoryItemType? CheckItem()
+    {
+        if (item == null) { return null; }
+        InventoryItemConfig itemConfig = item.Config;
+
+        return itemConfig.Type;
+    }
+
     public void DropItem()
     {
         item.Drop();

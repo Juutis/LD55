@@ -70,6 +70,17 @@ public class Inventory : MonoBehaviour
         return slot.TakeItem();
     }
 
+    public InventoryItemType? CheckItem(int index)
+    {
+        if (index < 0 || index >= slots.Count)
+        {
+            return null;
+        }
+        UIInventorySlot slot = slots[index];
+
+        return slot.CheckItem();
+    }
+
     public bool AddItem(InventoryItemConfig itemConfig)
     {
         if (itemConfig.IsStackable)
