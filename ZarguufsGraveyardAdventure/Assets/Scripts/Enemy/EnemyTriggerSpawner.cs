@@ -49,6 +49,10 @@ public class EnemyTriggerSpawner : MonoBehaviour
         {
             spawnStarted = true;
         }
+        else
+        {
+            spawnStarted = false;
+        }
 
         if (despawnTriggers.Any(x => x.InsideTrigger()))
         {

@@ -14,6 +14,12 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     [SerializeField]
     private float targetRange = 0.1f;
 
+    [SerializeField]
+    private float aggroRange;
+
+    [SerializeField]
+    private float smellRange;
+
     private Transform target;
 
     private Rigidbody2D rb;
@@ -78,6 +84,13 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         }
 
         runTowardsWaypoint();
+
+        if ((!HasLOSToTarget() && GetDistanceToTarget() > smellRange) || GetDistanceToTarget() > aggroRange)
+        {
+            Debug.Log($"{!HasLOSToTarget()} {GetDistanceToTarget() > aggroRange}");
+            rb.velocity = Vector2.zero;
+            return;
+        }
 
         if (isFinalWaypoint() && GetDistanceToTarget() < targetRange)
         {

@@ -163,7 +163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &104867099611209026
 Transform:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.08, y: 0.98, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6663956641896439097}
@@ -395,11 +395,11 @@ PrefabInstance:
       objectReference: {fileID: 6011560068649978663, guid: 474d391680b40a241b356963a065fd77, type: 3}
     - target: {fileID: 6098358570485454615, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.165727
       objectReference: {fileID: 0}
     - target: {fileID: 6098358570485454615, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -17.875513
       objectReference: {fileID: 0}
     - target: {fileID: 6098358570485454615, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -475,8 +475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordContainer: {fileID: 6553324243248547967}
   handContainer: {fileID: 104867099611209026}
-  projectile: {fileID: 8112089146178761263, guid: 1da6e06a5fde257459766a09327cfc7c, type: 3}
+  projectile: {fileID: 8112089146178761263, guid: f7dcfe702f814ab4c882d9abaa2406c3, type: 3}
   bigProjectile: {fileID: 8112089146178761263, guid: 1da6e06a5fde257459766a09327cfc7c, type: 3}
   projectileRoot: {fileID: 5777323033422177375}
   spellRoot: {fileID: 6663956641896439097}
-  availableAttacks: 03000000040000000500000006000000070000000800000003000000040000000600000007000000
+  availableAttacks: 0300000004000000
