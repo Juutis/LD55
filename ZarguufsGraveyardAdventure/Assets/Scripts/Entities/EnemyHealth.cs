@@ -43,18 +43,21 @@ public class EnemyHealth : MonoBehaviour
 
             InventoryItemConfig drop = itemChoices[Random.Range(0, itemChoices.Count)];
 
-            Vector2 circlePos = Random.insideUnitCircle.normalized;
-            Vector3 pos = new(circlePos.x, circlePos.y, 0);
-
-            PickupableItemManager.main.CreateItem(drop, transform.position + pos);
+            PickupableItemManager.main.CreateItem(drop, transform.position);
         }
 
         foreach (InventoryItemConfig item in uniqueDrops)
         {
             if (!Inventory.main.HasFoundUniqueItem(item.Type))
             {
-                Vector2 circlePos = Random.insideUnitCircle.normalized;
+                Vector2 circlePos = Random.insideUnitCircle.normalized * 0.5f;
                 Vector3 pos = new(circlePos.x, circlePos.y, 0);
+
+                if (uniqueDrops.Count == 1)
+                {
+                    pos = Vector3.zero;
+                }
+
                 PickupableItemManager.main.CreateItem(item, transform.position + pos);
             }
         }
