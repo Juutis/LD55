@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerHealth playerHealth;
 
+    public PlayerHealth PlayerHealth { get { return playerHealth; } }
+
     private float currentSpeed;
     private float dashCooldownDuration = 2f;
     private float dashCooldownTimer = 0f;

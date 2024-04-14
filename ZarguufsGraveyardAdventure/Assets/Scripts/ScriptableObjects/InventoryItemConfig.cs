@@ -10,4 +10,5 @@ public class InventoryItemConfig : ScriptableObject
     public int Count = 1;
 
     public bool IsStackable = false;
+    public bool IsHealth = false;
 }

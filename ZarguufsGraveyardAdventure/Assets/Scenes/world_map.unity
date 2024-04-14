@@ -192,6 +192,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4199282986030462570, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199282986030462570, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199282986030462570, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639477372681944318, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: tilePrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639477372681944318, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: tilePrefabs.Array.data[2].Tile
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c4f67afd06d89143bcc53835c660576, type: 2}
+    - target: {fileID: 4639477372681944318, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: tilePrefabs.Array.data[3].Tile
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f28971cab884b54ab428c1a05508af1, type: 2}
+    - target: {fileID: 4639477372681944318, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: tilePrefabs.Array.data[2].Prefab
+      value: 
+      objectReference: {fileID: 984468958109539904, guid: e5dee481c3e6aad4ab4ab2bb6afc92d9, type: 3}
+    - target: {fileID: 4639477372681944318, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: tilePrefabs.Array.data[3].Prefab
+      value: 
+      objectReference: {fileID: 2636574026852437003, guid: 1039ed2591a46be4bb37f0de9ae9be8c, type: 3}
     - target: {fileID: 6732629989698460964, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -230,6 +262,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6732629989698460964, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679260827673857314, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679260827673857314, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679260827673857314, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679260827673857314, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8408208499545175136, guid: 2d31021eb54639e47ab50d619e18109f, type: 3}

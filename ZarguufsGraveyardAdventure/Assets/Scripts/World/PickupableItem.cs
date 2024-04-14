@@ -35,4 +35,9 @@ public class PickupableItem : MonoBehaviour
     {
         highlightSpriteRenderer.enabled = false;
     }
+
+    public bool IsHealth()
+    {
+        return config.IsHealth;
+    }
 }

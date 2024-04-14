@@ -37,6 +37,8 @@ public class PlayerItemPickup : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                int healthPickedUp = 0;
+
                 for (int index = nearbyItems.Count - 1; index >= 0; index -= 1)
                 {
                     PickupableItem item = nearbyItems[index];
@@ -44,12 +46,31 @@ public class PlayerItemPickup : MonoBehaviour
                     {
                         continue;
                     }
-                    bool itemWasPickedup = Inventory.main.AddItem(item.Config);
+
+                    bool itemWasPickedup = false;
+                    if (item.IsHealth())
+                    {
+                        if (PlayerMovement.main.PlayerHealth.AddHealth(1))
+                        {
+                            itemWasPickedup = true;
+                            healthPickedUp++;
+                        }
+                    }
+                    else
+                    {
+                         itemWasPickedup = Inventory.main.AddItem(item.Config);
+                    }
+
                     if (itemWasPickedup)
                     {
                         PickupableItemManager.main.KillItem(item);
                         nearbyItems.Remove(item);
                     }
+                }
+
+                if (healthPickedUp > 0)
+                {
+                    UIManager.main.ShowMessage(transform.position, $"+{healthPickedUp}", Color.green);
                 }
             }
         }
