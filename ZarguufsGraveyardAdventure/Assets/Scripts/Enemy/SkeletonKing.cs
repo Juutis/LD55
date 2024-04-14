@@ -114,14 +114,20 @@ public class SkeletonKing : MonoBehaviour
     }
 
     private SkeletonKingState prevAttack = SkeletonKingState.ATTACK2;
+    private float changeAttackChance = 0.5f;
 
     private SkeletonKingState nextAttack() {
-        if (prevAttack == SkeletonKingState.ATTACK1) {
-            prevAttack = SkeletonKingState.ATTACK2;
-            return SkeletonKingState.ATTACK2;
+        if (Random.Range(0.0f, 1.0f) < changeAttackChance) {
+            changeAttackChance += 0.1f;
+            if (prevAttack == SkeletonKingState.ATTACK1) {
+                prevAttack = SkeletonKingState.ATTACK2;
+                return SkeletonKingState.ATTACK2;
+            } else {
+                prevAttack = SkeletonKingState.ATTACK1;
+                return SkeletonKingState.ATTACK1;
+            }
         } else {
-            prevAttack = SkeletonKingState.ATTACK1;
-            return SkeletonKingState.ATTACK1;
+            return prevAttack;
         }
     }
 }
