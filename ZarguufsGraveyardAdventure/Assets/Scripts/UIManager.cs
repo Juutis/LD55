@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -28,6 +29,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private UIActionSlot dashActionSlot;
 
+    [SerializeField]
+    private UIPerk uiPerkPrefab;
+    private List<UIPerk> uiPerks = new();
+    [SerializeField]
+    private GameObject uiPerkArea;
+    [SerializeField]
+    private Transform uiPerkContainer;
+
     public void WeaponCooldown(float cooldownDuration)
     {
         weaponActionSlot.Cooldown(cooldownDuration);
@@ -36,6 +45,25 @@ public class UIManager : MonoBehaviour
     public void DashCooldown(float cooldownDuration)
     {
         dashActionSlot.Cooldown(cooldownDuration);
+    }
+
+    public void AddPerk(PerkConfig perkConfig)
+    {
+        if (uiPerks.Count == 0)
+        {
+            uiPerkArea.SetActive(true);
+        }
+        UIPerk existingPerk = uiPerks.FirstOrDefault(perk => perk.Config.Type == perkConfig.Type);
+        if (existingPerk != null)
+        {
+            existingPerk.AddCount();
+        }
+        else
+        {
+            UIPerk uiPerk = Instantiate(uiPerkPrefab, uiPerkContainer);
+            uiPerk.Init(perkConfig);
+            uiPerks.Add(uiPerk);
+        }
     }
 
     public void SetHealth(int health)
