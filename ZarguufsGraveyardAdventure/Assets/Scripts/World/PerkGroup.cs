@@ -90,9 +90,9 @@ public class PerkGroup : MonoBehaviour
                 if (nearbyPerk)
                 {
                     UIManager.main.HideTooltip();
+                    UIManager.main.HideWorldTooltip();
                 }
                 nearbyPerk = null;
-                UIManager.main.HideWorldTooltip();
             }
         }
         if (nearbyPerk != null)

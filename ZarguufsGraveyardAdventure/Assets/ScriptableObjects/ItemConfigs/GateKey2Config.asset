@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GateKey2Config
   m_EditorClassIdentifier: 
   Type: 40
-  Sprite: {fileID: 2091672654, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  Sprite: {fileID: 928425361, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Count: 1
   IsStackable: 0
   IsHealth: 0

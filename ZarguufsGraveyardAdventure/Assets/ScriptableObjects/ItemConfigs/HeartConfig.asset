@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: HeartConfig
   m_EditorClassIdentifier: 
   Type: 60
-  Sprite: {fileID: -1948830737, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  Sprite: {fileID: -672091427, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Count: 1
   IsStackable: 1
   IsHealth: 1
+  IsUnique: 0
+  IsKey: 0

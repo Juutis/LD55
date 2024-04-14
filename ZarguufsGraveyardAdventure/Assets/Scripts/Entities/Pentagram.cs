@@ -29,6 +29,7 @@ public class Pentagram : MonoBehaviour
 
     [SerializeField]
     private Transform perkSpawnPosition;
+    public Transform PerkSpawnPosition { get { return perkSpawnPosition; } }
 
 
     void Start()
@@ -61,6 +62,19 @@ public class Pentagram : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    public void Unlock()
+    {
+        animator.Play("pentagramSummonEnd");
+    }
+
+    public void PentagramSummonEndFinished()
+    {
+        foreach (var slot in slots)
+        {
+            slot.Unlock();
         }
     }
 
@@ -106,7 +120,7 @@ public class Pentagram : MonoBehaviour
     {
         GameObject bossInstance = Instantiate(chosenRecipe.BossPrefab);
         bossInstance.transform.position = bossSpawnPosition.position;
-        bossInstance.GetComponent<EnemyHealth>().SetPerkDropPosition(perkSpawnPosition.position);
+        bossInstance.GetComponent<EnemyHealth>().SetPentagram(this);
         chosenRecipe = null;
 
         recipeIsChosen = false;

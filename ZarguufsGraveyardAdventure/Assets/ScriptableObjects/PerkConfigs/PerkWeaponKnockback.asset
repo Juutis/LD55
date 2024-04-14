@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PerkWeaponKnockback
   m_EditorClassIdentifier: 
   Type: 3
-  Sprite: {fileID: 21300000, guid: 95faad57e314ff343b94e20bca3d09dd, type: 3}
+  Sprite: {fileID: -1240888429, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Title: Knockback
   Description: Enemies are knocked back more!
   Value: 1

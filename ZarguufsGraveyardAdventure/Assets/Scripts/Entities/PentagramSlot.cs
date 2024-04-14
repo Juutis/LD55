@@ -41,9 +41,14 @@ public class PentagramSlot : MonoBehaviour
     {
         PickupableItemManager.main.KillItem(item);
         Debug.Log("ConsumeFinished");
-        isLocked = false;
     }
 
+    public void Unlock()
+    {
+        isLocked = false;
+        playerIsAtSlot = false;
+        checkTimer = 0f;
+    }
     public void Clear()
     {
         item = null;

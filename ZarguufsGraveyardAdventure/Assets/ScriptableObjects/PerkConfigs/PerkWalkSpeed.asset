@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PerkWalkSpeed
   m_EditorClassIdentifier: 
   Type: 7
-  Sprite: {fileID: 21300000, guid: 51356b80537670a498363d2405b0481b, type: 3}
+  Sprite: {fileID: -1245923212, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Title: Walking speed
   Description: Walk faster!
   Value: 0.4

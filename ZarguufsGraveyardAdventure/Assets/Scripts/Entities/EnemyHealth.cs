@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private PerkGroup perkGroupPrefab;
 
-    private Vector2 perkDropPosition;
+    private Pentagram sourcePentagram;
 
     public void GetHit(int damage)
     {
@@ -30,9 +30,9 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void SetPerkDropPosition(Vector2 dropPosition)
+    public void SetPentagram(Pentagram pentagram)
     {
-        perkDropPosition = dropPosition;
+        sourcePentagram = pentagram;
     }
 
     public void Die()
@@ -75,7 +75,8 @@ public class EnemyHealth : MonoBehaviour
         if (perkGroupPrefab != null)
         {
             PerkGroup group = Instantiate(perkGroupPrefab, transform.parent);
-            group.transform.position = perkDropPosition;
+            sourcePentagram.Unlock();
+            group.transform.position = sourcePentagram.PerkSpawnPosition.position;
             group.Init();
         }
 

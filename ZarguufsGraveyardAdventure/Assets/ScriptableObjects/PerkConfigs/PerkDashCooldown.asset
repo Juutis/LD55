@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PerkDashCooldown
   m_EditorClassIdentifier: 
   Type: 5
-  Sprite: {fileID: 21300000, guid: 2dc9e917c5fa7704089c8413b6a21312, type: 3}
+  Sprite: {fileID: -1631926020, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Title: Dash cooldown
   Description: Dash more often!
   Value: 0.2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PerkHealth
   m_EditorClassIdentifier: 
   Type: 6
-  Sprite: {fileID: 21300000, guid: 9fbb26f3dbbc218458ef8349829561c4, type: 3}
+  Sprite: {fileID: -383459669, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Title: Max health
   Description: Gain max health!
   Value: 5
