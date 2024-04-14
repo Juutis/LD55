@@ -450,6 +450,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4739832594945053203, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2956452575474641953}
+    - targetCorrespondingSourceObject: {fileID: 4739832594945053203, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3637700500737573740}
   m_SourcePrefab: {fileID: 100100000, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
 --- !u!4 &598866739917201035 stripped
 Transform:
@@ -480,3 +483,16 @@ MonoBehaviour:
   projectileRoot: {fileID: 5777323033422177375}
   spellRoot: {fileID: 6663956641896439097}
   availableAttacks: 0300000004000000
+--- !u!114 &-3637700500737573740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651257326730974977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e276087b0080124cb2ee8df95a02347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perkGroupPrefab: {fileID: 5507525285660041521, guid: 743cb051df0911e4d9a7067014279b86, type: 3}

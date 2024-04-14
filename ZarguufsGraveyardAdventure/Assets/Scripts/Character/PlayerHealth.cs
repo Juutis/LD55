@@ -18,6 +18,9 @@ public class PlayerHealth : MonoBehaviour
     private float invulnerabilityTimer = 0f;
     private bool isInvulnerable = false;
 
+    [SerializeField]
+    private Animator animator;
+
     void Start()
     {
         maxHealth = health;
@@ -44,6 +47,12 @@ public class PlayerHealth : MonoBehaviour
 
             }
         }
+    }
+
+    public void HealToFull()
+    {
+        health = maxHealth;
+        UIManager.main.SetHealth(health);
     }
 
     public void IncreaseMaxHP(float value)
@@ -78,7 +87,7 @@ public class PlayerHealth : MonoBehaviour
         health += healthAddition;
         Debug.Log($"My health is now {health}");
         UIManager.main.AddHealth(healthAddition);
-        if (health < 0)
+        if (health <= 0)
         {
             health = 0;
             Die();
@@ -92,7 +101,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("You died!");
+        Time.timeScale = 0f;
+        animator.Play("playerDie");
+    }
+
+    public void DieFinished()
+    {
+        GameManager.main.PlayerDie();
+        animator.Play("playerIdle");
     }
 
 }

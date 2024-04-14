@@ -225,6 +225,7 @@ MonoBehaviour:
   health: 10
   invulnerabilityDurationFromDamage: 0.2
   invulnerabilityDurationFromDash: 0.2
+  animator: {fileID: 6881794051561634713}
 --- !u!50 &3407389812370697865
 Rigidbody2D:
   serializedVersion: 4
@@ -264,7 +265,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fc8917322bd01a348a3798b6d7bc511e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

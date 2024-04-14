@@ -120,7 +120,9 @@ public class Pentagram : MonoBehaviour
     {
         GameObject bossInstance = Instantiate(chosenRecipe.BossPrefab);
         bossInstance.transform.position = bossSpawnPosition.position;
-        bossInstance.GetComponent<EnemyHealth>().SetPentagram(this);
+        BossEnemy bossEnemy = bossInstance.GetComponent<BossEnemy>();
+        bossEnemy.Init(this);
+        GameManager.main.RegisterBoss(bossEnemy);
         chosenRecipe = null;
 
         recipeIsChosen = false;

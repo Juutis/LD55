@@ -15,10 +15,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private float itemDropChance;
 
-    [SerializeField]
-    private PerkGroup perkGroupPrefab;
-
-    private Pentagram sourcePentagram;
 
     public void GetHit(int damage)
     {
@@ -30,10 +26,6 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void SetPentagram(Pentagram pentagram)
-    {
-        sourcePentagram = pentagram;
-    }
 
     public void Die()
     {
@@ -72,12 +64,10 @@ public class EnemyHealth : MonoBehaviour
             }
         }
 
-        if (perkGroupPrefab != null)
+        BossEnemy bossEnemy = GetComponent<BossEnemy>();
+        if (bossEnemy != null)
         {
-            PerkGroup group = Instantiate(perkGroupPrefab, transform.parent);
-            sourcePentagram.Unlock();
-            group.transform.position = sourcePentagram.PerkSpawnPosition.position;
-            group.Init();
+            bossEnemy.Die();
         }
 
         Destroy(gameObject);
