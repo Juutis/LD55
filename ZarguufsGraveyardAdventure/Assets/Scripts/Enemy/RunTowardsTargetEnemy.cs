@@ -32,6 +32,10 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<CharacterAnimator>();
+        if (target == null)
+        {
+            target = PlayerMovement.main.transform;
+        }
         EnableNavigation();
     }
 
@@ -40,98 +44,123 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     {
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         runTowardsWaypoint();
 
-        if (isFinalWaypoint() && GetDistanceToTarget() < targetRange) {
+        if (isFinalWaypoint() && GetDistanceToTarget() < targetRange)
+        {
             rb.velocity = Vector2.zero;
         }
 
 
-        if (rb.velocity.magnitude > 0.1f) {
+        if (rb.velocity.magnitude > 0.1f)
+        {
             animator.Walk();
-        } else {
+        }
+        else
+        {
             animator.Idle();
         }
     }
 
-    public void EnableNavigation() {
+    public void EnableNavigation()
+    {
         navigationActive = true;
         updatePathing();
     }
 
-    public void DisableNavigation() {
+    public void DisableNavigation()
+    {
         navigationActive = false;
     }
 
-    public float GetDistanceToTarget() {
-        if (path == null || path.corners == null || path.corners.Length == 0) {
+    public float GetDistanceToTarget()
+    {
+        if (path == null || path.corners == null || path.corners.Length == 0)
+        {
             return float.MaxValue;
         }
         var distanceSum = 0.0f;
         var nextWaypoint = waypointIndex;
         distanceSum += Vector2.Distance(transform.position, path.corners[nextWaypoint]);
         nextWaypoint++;
-        while (nextWaypoint < path.corners.Length) {
+        while (nextWaypoint < path.corners.Length)
+        {
             distanceSum += Vector2.Distance(path.corners[nextWaypoint - 1], path.corners[nextWaypoint]);
             nextWaypoint++;
         }
         return distanceSum;
     }
 
-    public bool HasLOSToTarget() {
-        if (path == null || path.corners == null || path.corners.Length == 0) {
+    public bool HasLOSToTarget()
+    {
+        if (path == null || path.corners == null || path.corners.Length == 0)
+        {
             return false;
         }
         return isFinalWaypoint();
     }
 
-    private void updatePathing() {
+    private void updatePathing()
+    {
         NavMeshPath newPath = new NavMeshPath();
         var sourcePos = transform.position;
         sourcePos.z = 0;
         var targetPos = target.position;
         targetPos.z = 0;
         var success = NavMesh.CalculatePath(sourcePos, targetPos, NavMesh.AllAreas, newPath);
-        if (success) {
+        if (success)
+        {
             path = newPath;
             waypointIndex = 0;
         }
 
-        if (navigationActive) {
+        if (navigationActive)
+        {
             Invoke("updatePathing", navigationUpdateInterval);
         }
     }
 
-    private void runTowardsWaypoint() {
-        if (path == null || path.corners == null || path.corners.Length == 0) {
+    private void runTowardsWaypoint()
+    {
+        if (path == null || path.corners == null || path.corners.Length == 0)
+        {
             return;
         }
         updateWayPoint();
-        
+
         var targetPosition = path.corners[waypointIndex];
-        if (targetPosition != null) {
+        if (targetPosition != null)
+        {
             rb.velocity = (targetPosition - transform.position).normalized * speed;
-        } else {
+        }
+        else
+        {
             rb.velocity = Vector3.zero;
         }
     }
 
-    private void updateWayPoint() {
+    private void updateWayPoint()
+    {
         var targetPosition = path.corners[waypointIndex];
-        if (targetPosition != null) {
-            if (waypointReached() && !isFinalWaypoint()) {
+        if (targetPosition != null)
+        {
+            if (waypointReached() && !isFinalWaypoint())
+            {
                 waypointIndex++;
             }
         }
     }
 
-    private bool waypointReached() {
+    private bool waypointReached()
+    {
         var targetPosition = path.corners[waypointIndex];
         return Vector2.Distance(transform.position, targetPosition) < waypointDistanceCheckEpsilon;
     }
 
-    private bool isFinalWaypoint() {
+    private bool isFinalWaypoint()
+    {
         return waypointIndex == path.corners.Length - 1;
     }
 }

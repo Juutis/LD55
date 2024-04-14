@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private KeyCode dashKey = KeyCode.Space;
 
+    [SerializeField]
+    private PlayerHealth playerHealth;
+
     private float currentSpeed;
     private float dashCooldownDuration = 2f;
     private float dashCooldownTimer = 0f;
@@ -76,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
             dashIsOnCooldown = true;
             dashCooldownTimer = 0f;
             UIManager.main.DashCooldown(dashCooldownDuration);
+            playerHealth.InvulnerableFromDash();
         }
         else if (isDashing)
         {
@@ -87,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
                 dashTimer = 0f;
                 isDashing = false;
                 currentSpeed = speed;
+                playerHealth.InvulnerableFromDash();
             }
         }
         else

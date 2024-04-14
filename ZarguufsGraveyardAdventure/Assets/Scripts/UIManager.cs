@@ -11,6 +11,11 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
+    private Transform worldSpaceUI;
+    [SerializeField]
+    private UIPopText popTextPrefab;
+
+    [SerializeField]
     private UIHealth uiHealth;
     [SerializeField]
     private UITooltip uiTooltip;
@@ -38,14 +43,28 @@ public class UIManager : MonoBehaviour
         dashActionSlot.Cooldown(cooldownDuration);
     }
 
-    public void AddHealth(int health)
+    public void SetHealth(int health)
     {
-        uiHealth.AddHealth(health);
+        uiHealth.Init(health);
+    }
+    public void AddHealth(int healthChange)
+    {
+        uiHealth.AddHealth(healthChange);
     }
 
     public void ShowTooltip(string message)
     {
         uiTooltip.Show(message);
+    }
+
+    public void ShowMessage(Vector2 position, string message, Color color)
+    {
+        UIPopText popText = Instantiate(popTextPrefab, worldSpaceUI);
+        popText.Show(position, message, color);
+    }
+    public void ShowMessage(Vector2 position, string message)
+    {
+        ShowMessage(position, message, Color.white);
     }
 
     public void HideTooltip()

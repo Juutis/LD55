@@ -7,13 +7,19 @@ public class HittableEnemy : MonoBehaviour
 {
     EnemyHealth enemyHealth;
 
-    void Start() {
+
+    void Start()
+    {
         enemyHealth = GetComponent<EnemyHealth>();
     }
-    void OnTriggerEnter2D(Collider2D collider2D) {
-        if (collider2D.tag == "PlayerWeapon") {
+
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        Debug.Log($"hit by {collider2D}");
+        if (collider2D.tag == "PlayerWeapon")
+        {
             Debug.Log($"[{name}] was hit by [{collider2D.name}]");
-            enemyHealth.GetHit();
+            enemyHealth.GetHit(PlayerAiming.main.Damage);
         }
     }
 
