@@ -88,7 +88,7 @@ public class PlayerItemPickup : MonoBehaviour
         nearbyItems = PickupableItemManager.main.CloseItems(transform.position, maxDistance);
         if (nearbyItems.Count > 0)
         {
-            UIManager.main.ShowTooltip($"Pick up ({pickupKey})");
+            UIManager.main.ShowPlayerTooltip($"Pick up ({pickupKey})");
             pickUpEnabled = true;
             foreach (PickupableItem item in nearbyItems)
             {

@@ -8,6 +8,8 @@ public class UITooltip : MonoBehaviour
 {
     [SerializeField]
     private FollowTarget followTarget;
+    [SerializeField]
+    private bool followPlayer = true;
 
     [SerializeField]
     private GameObject container;
@@ -17,13 +19,22 @@ public class UITooltip : MonoBehaviour
 
     private void Start()
     {
-        followTarget.SetTarget(PlayerMovement.main.transform);
+        if (followPlayer)
+        {
+            followTarget.SetTarget(PlayerMovement.main.transform);
+        }
     }
 
     public void Show(string message)
     {
         container.SetActive(true);
         txtMessage.text = message;
+    }
+    public void Show(string message, Vector2 position)
+    {
+        container.SetActive(true);
+        txtMessage.text = message;
+        container.transform.position = position;
     }
     public void Hide()
     {

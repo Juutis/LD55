@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     private UIHealth uiHealth;
     [SerializeField]
     private UITooltip uiTooltip;
+    [SerializeField]
+    private UITooltip uiWorldTooltip;
 
 
     [SerializeField]
@@ -52,9 +54,14 @@ public class UIManager : MonoBehaviour
         uiHealth.AddHealth(healthChange);
     }
 
-    public void ShowTooltip(string message)
+    public void ShowPlayerTooltip(string message)
     {
         uiTooltip.Show(message);
+    }
+
+    public void ShowWorldTooltip(string message, Vector2 position)
+    {
+        uiWorldTooltip.Show(message, position);
     }
 
     public void ShowMessage(Vector2 position, string message, Color color)
@@ -70,5 +77,9 @@ public class UIManager : MonoBehaviour
     public void HideTooltip()
     {
         uiTooltip.Hide();
+    }
+    public void HideWorldTooltip()
+    {
+        uiWorldTooltip.Hide();
     }
 }

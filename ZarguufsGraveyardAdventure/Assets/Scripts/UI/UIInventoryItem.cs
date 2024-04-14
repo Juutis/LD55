@@ -13,6 +13,8 @@ public class UIInventoryItem : MonoBehaviour
     private TextMeshProUGUI txtCount;
     InventoryItemConfig config;
 
+    public InventoryItemConfig Config { get { return config; } }
+
     int count = 1;
     public InventoryItemType Type { get { return config.Type; } }
 
@@ -31,9 +33,13 @@ public class UIInventoryItem : MonoBehaviour
         name = $"{config.Type} #{count}";
         txtCount.text = $"{count}";
     }
-    public void Use()
+    public int Take()
     {
-        Debug.Log($"[{name}] used!");
+        Debug.Log($"[{name}] taken!");
+        count -= 1;
+        name = $"{config.Type} #{count}";
+        txtCount.text = $"{count}";
+        return count;
     }
 
     public void Drop()

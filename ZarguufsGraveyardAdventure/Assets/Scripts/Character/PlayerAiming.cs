@@ -80,7 +80,7 @@ public class PlayerAiming : MonoBehaviour
     {
         isOnCooldown = true;
         cooldownTimer = 0f;
-        Debug.Log("Swing");
+        //        Debug.Log("Swing");
         animator.Play("weaponSwing");
         UIManager.main.WeaponCooldown(cooldownDuration);
     }

@@ -20,13 +20,16 @@ public class PickupableItemManager : MonoBehaviour
     [SerializeField]
     private PickupableItem itemPrefab;
 
-    public void CreateItem(InventoryItemConfig itemConfig, Vector3 position)
+
+    public PickupableItem CreateItem(InventoryItemConfig itemConfig, Vector3 position)
     {
         PickupableItem item = Instantiate(itemPrefab, transform);
         item.Init(itemConfig);
         item.transform.position = position;
         AddItem(item);
+        return item;
     }
+
 
     public List<PickupableItem> CloseItems(Vector3 position, float maxDistance)
     {

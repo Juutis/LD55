@@ -33,6 +33,17 @@ public class Inventory : MonoBehaviour
 
     private List<UIInventorySlot> slots = new();
 
+    public Dictionary<KeyCode, int> InventoryKeys = new(){
+        {KeyCode.Alpha1, 1},
+        {KeyCode.Alpha2, 2},
+        {KeyCode.Alpha3, 3},
+        {KeyCode.Alpha4, 4},
+        {KeyCode.Alpha5, 5},
+        {KeyCode.Alpha6, 6},
+        {KeyCode.Alpha7, 7},
+        {KeyCode.Alpha8, 8},
+    };
+
     void Start()
     {
         Init();
@@ -46,6 +57,17 @@ public class Inventory : MonoBehaviour
             slot.Init(index + 1);
             slots.Add(slot);
         }
+    }
+
+    public InventoryItemConfig TakeItem(int index)
+    {
+        if (index < 0 || index >= slots.Count)
+        {
+            return null;
+        }
+        UIInventorySlot slot = slots[index];
+
+        return slot.TakeItem();
     }
 
     public bool AddItem(InventoryItemConfig itemConfig)

@@ -42,9 +42,17 @@ public class UIInventorySlot : MonoBehaviour
         imgBg.color = originalColor;
     }
 
-    public void UseItem()
+    public InventoryItemConfig TakeItem()
     {
-        item.Use();
+        if (item == null) { return null; }
+        InventoryItemConfig itemConfig = item.Config;
+        int itemsLeft = item.Take();
+        if (itemsLeft < 1)
+        {
+            Destroy(item.gameObject);
+            item = null;
+        }
+        return itemConfig;
     }
     public void DropItem()
     {
