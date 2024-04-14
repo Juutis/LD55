@@ -27,6 +27,7 @@ public class ProjectileShooter : MonoBehaviour
     void Start()
     {
         navigation = GetComponent<RunTowardsTargetEnemy>();
+        target = PlayerMovement.main.transform;
     }
 
     // Update is called once per frame
