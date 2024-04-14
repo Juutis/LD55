@@ -900,4 +900,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closedGate: {fileID: 8613356911637455994}
   openGate: {fileID: 322968132615878166}
-  needsKey: 0
+  needsKey: 1
