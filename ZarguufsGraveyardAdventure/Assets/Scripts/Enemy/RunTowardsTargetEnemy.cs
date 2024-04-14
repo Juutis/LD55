@@ -14,7 +14,6 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     [SerializeField]
     private float targetRange = 0.1f;
 
-    [SerializeField]
     private Transform target;
 
     private Rigidbody2D rb;
@@ -33,6 +32,7 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = PlayerMovement.main.transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<CharacterAnimator>();
         EnableNavigation();
