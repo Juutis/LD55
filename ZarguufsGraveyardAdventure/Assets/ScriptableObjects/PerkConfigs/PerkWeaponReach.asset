@@ -16,4 +16,4 @@ MonoBehaviour:
   Sprite: {fileID: -5772885715411392002, guid: a81757eaeb29dae4cb884cf10519ef5b, type: 3}
   Title: Weapon reach
   Description: Hit further!
-  Value: 1
+  Value: 0.1

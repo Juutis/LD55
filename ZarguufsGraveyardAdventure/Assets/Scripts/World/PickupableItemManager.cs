@@ -33,7 +33,7 @@ public class PickupableItemManager : MonoBehaviour
 
     public List<PickupableItem> CloseItems(Vector3 position, float maxDistance)
     {
-        return items.Where(item => Vector3.Distance(position, item.transform.position) <= maxDistance).ToList();
+        return items.Where(item => !item.IsLocked && Vector3.Distance(position, item.transform.position) <= maxDistance).ToList();
     }
 
     private void AddItem(PickupableItem item)

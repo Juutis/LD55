@@ -46,10 +46,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void IncreaseMaxHP(int value)
+    public void IncreaseMaxHP(float value)
     {
         float currentPercentage = (float)health / maxHealth;
-        maxHealth += value;
+        maxHealth += Mathf.CeilToInt(value);
         int newHealth = Mathf.CeilToInt(maxHealth * currentPercentage);
         int change = newHealth - health;
         Debug.Log($"Old [{maxHealth - value}] New [{maxHealth}]. % [{currentPercentage}] so {health} should become {newHealth} and change is {change}");

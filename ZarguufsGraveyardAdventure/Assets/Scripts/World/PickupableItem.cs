@@ -16,11 +16,19 @@ public class PickupableItem : MonoBehaviour
     private SpriteRenderer highlightSpriteRenderer;
     private PentagramSlot slot;
 
+    private bool isLocked = false;
+    public bool IsLocked { get { return isLocked; } }
+
     public void Init(InventoryItemConfig config)
     {
         this.config = config;
         spriteRenderer.sprite = config.Sprite;
         highlightSpriteRenderer.sprite = config.Sprite;
+    }
+
+    public void Lock()
+    {
+        isLocked = true;
     }
 
     public void SetSlot(PentagramSlot slot)
@@ -38,11 +46,18 @@ public class PickupableItem : MonoBehaviour
 
     public void Highlight()
     {
-        highlightSpriteRenderer.enabled = true;
+        if (highlightSpriteRenderer != null)
+        {
+            highlightSpriteRenderer.enabled = true;
+        }
     }
     public void Unhighlight()
     {
-        highlightSpriteRenderer.enabled = false;
+        if (highlightSpriteRenderer != null)
+        {
+
+            highlightSpriteRenderer.enabled = false;
+        }
     }
 
     public bool IsHealth()

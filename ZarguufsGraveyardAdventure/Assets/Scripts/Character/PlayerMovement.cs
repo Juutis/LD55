@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
                 dashIsOnCooldown = false;
             }
         }
-        if (!dashIsOnCooldown && !isDashing && Input.GetKeyDown(dashKey))
+        if (!dashIsOnCooldown && !isDashing && Input.GetKey(dashKey))
         {
             isDashing = true;
             anim.Play("playerDash");
@@ -136,17 +136,17 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = dir * currentSpeed;
     }
 
-    internal void ReduceDashCooldown(int value)
+    internal void ReduceDashCooldown(float value)
     {
         dashCooldownDuration -= value;
     }
 
-    internal void IncreaseDashLength(int value)
+    internal void IncreaseDashLength(float value)
     {
         dashSpeed += value;
     }
 
-    internal void IncreaseWalkSpeed(int value)
+    internal void IncreaseWalkSpeed(float value)
     {
         speed += value;
     }

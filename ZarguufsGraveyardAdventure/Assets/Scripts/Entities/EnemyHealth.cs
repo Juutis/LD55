@@ -15,6 +15,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private float itemDropChance;
 
+    [SerializeField]
+    private PerkGroup perkGroupPrefab;
+
     public void GetHit(int damage)
     {
         UIManager.main.ShowMessage(transform.position, $"-{damage}", Color.white);
@@ -27,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        if (Random.Range(0,1f) <= itemDropChance && itemDrops.Count > 0)
+        if (Random.Range(0, 1f) <= itemDropChance && itemDrops.Count > 0)
         {
             List<InventoryItemConfig> itemChoices = new();
             foreach (ItemDropChance item in itemDrops)
@@ -60,6 +63,13 @@ public class EnemyHealth : MonoBehaviour
 
                 PickupableItemManager.main.CreateItem(item, transform.position + pos);
             }
+        }
+
+        if (perkGroupPrefab != null)
+        {
+            PerkGroup group = Instantiate(perkGroupPrefab, transform.parent);
+            group.transform.position = transform.position;
+            group.Init();
         }
 
         Destroy(gameObject);
