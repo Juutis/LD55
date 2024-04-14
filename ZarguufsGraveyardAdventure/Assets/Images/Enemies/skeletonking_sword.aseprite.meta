@@ -80,7 +80,7 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
@@ -93,11 +93,11 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638486420435686146
+  platformSettingsDirtyTick: 638486988189025619
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: skeletonking_sword
     originalName: 
-    pivot: {x: 0.59876525, y: 0.14064756}
+    pivot: {x: 0.5792073, y: 0.17306513}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -141,6 +141,166 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: skeletonking_sword_Frame_1
+    originalName: 
+    pivot: {x: 0.45874152, y: 0.3021431}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 106
+      width: 3
+      height: 2
+    spriteID: 213171bcebb22f44a9f50f5fdb84ad0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 106}
+  - name: skeletonking_sword_Frame_2
+    originalName: 
+    pivot: {x: 0.55198336, y: 0.16504161}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 86
+      width: 4
+      height: 12
+    spriteID: ff0fa48af83046143888bc062192a6bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 86}
+  - name: skeletonking_sword_Frame_3
+    originalName: 
+    pivot: {x: 0.5973571, y: 0.18748118}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 63
+      width: 6
+      height: 15
+    spriteID: 5a37a15eb64dd8a49ae7640bf39eaa9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 63}
+  - name: skeletonking_sword_Frame_4
+    originalName: 
+    pivot: {x: 0.625, y: 0.13862857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 35
+      width: 8
+      height: 20
+    spriteID: fc573ae545554aa4ab3bb9216bd3fdb5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 35}
+  - name: skeletonking_sword_Frame_5
+    originalName: 
+    pivot: {x: 0.5792073, y: 0.15498468}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 35
+      width: 10
+      height: 23
+    spriteID: ddfa48c8ea8d2b747b7ea8292dbb894f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 35}
+  - name: skeletonking_sword_Frame_6
+    originalName: 
+    pivot: {x: 0.5792073, y: 0.127864}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 66
+      width: 10
+      height: 23
+    spriteID: b63e4b4d8f9baa34f85a01c0876552b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 66}
+  - name: skeletonking_sword_Frame_7
+    originalName: 
+    pivot: {x: 0.62079275, y: 0.17306551}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 97
+      width: 10
+      height: 23
+    spriteID: f78fc1816101f1644a43faf7a85f7599
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 97}
+  - name: skeletonking_sword_Frame_8
+    originalName: 
+    pivot: {x: 0.5792076, y: 0.16402481}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 4
+      width: 10
+      height: 23
+    spriteID: 26e8de2cd8f2edc4f9a7b01ed44a4a3f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -150,14 +310,78 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: skeletonking_sword
+    - name: skeletonking_sword_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
-        y: 8
+        x: 10
+        y: 6
         width: 10
         height: 23
       spriteId: 8572def3df399a04985456c87c549731
+    - name: skeletonking_sword_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 14
+        y: 10
+        width: 3
+        height: 2
+      spriteId: 213171bcebb22f44a9f50f5fdb84ad0b
+    - name: skeletonking_sword_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 14
+        y: 8
+        width: 4
+        height: 12
+      spriteId: ff0fa48af83046143888bc062192a6bd
+    - name: skeletonking_sword_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 12
+        y: 8
+        width: 6
+        height: 15
+      spriteId: 5a37a15eb64dd8a49ae7640bf39eaa9b
+    - name: skeletonking_sword_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 11
+        y: 7
+        width: 8
+        height: 20
+      spriteId: fc573ae545554aa4ab3bb9216bd3fdb5
+    - name: skeletonking_sword_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 10
+        y: 6
+        width: 10
+        height: 23
+      spriteId: ddfa48c8ea8d2b747b7ea8292dbb894f
+    - name: skeletonking_sword_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 10
+        y: 6
+        width: 10
+        height: 23
+      spriteId: b63e4b4d8f9baa34f85a01c0876552b4
+    - name: skeletonking_sword_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 10
+        y: 6
+        width: 10
+        height: 23
+      spriteId: f78fc1816101f1644a43faf7a85f7599
+    - name: skeletonking_sword_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 10
+        y: 6
+        width: 10
+        height: 23
+      spriteId: 26e8de2cd8f2edc4f9a7b01ed44a4a3f
     linkedCells: []
     parentIndex: -1
   platformSettings:
