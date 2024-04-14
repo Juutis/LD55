@@ -15,4 +15,5 @@ MonoBehaviour:
   Type: 10
   Sprite: {fileID: 421581823, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Count: 1
-  IsStackable: 0
+  IsStackable: 1
+  IsHealth: 0

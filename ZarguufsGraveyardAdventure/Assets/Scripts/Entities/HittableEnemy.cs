@@ -15,10 +15,10 @@ public class HittableEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        Debug.Log($"hit by {collider2D}");
+        // Debug.Log($"hit by {collider2D}");
         if (collider2D.tag == "PlayerWeapon")
         {
-            Debug.Log($"[{name}] was hit by [{collider2D.name}]");
+            // Debug.Log($"[{name}] was hit by [{collider2D.name}]");
             enemyHealth.GetHit(PlayerAiming.main.Damage);
         }
     }
