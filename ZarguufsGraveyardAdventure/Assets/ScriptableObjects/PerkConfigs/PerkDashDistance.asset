@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab386bf735c28f4f9627383fe79779f, type: 3}
   m_Name: PerkDashDistance
   m_EditorClassIdentifier: 
-  Type: 3
+  Type: 4
   Sprite: {fileID: 21300000, guid: 75686acda7b1f8645b89315be4cc3ddb, type: 3}
   Title: Dash distance
   Description: Dash further!

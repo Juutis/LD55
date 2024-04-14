@@ -8,34 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.data[1].Count
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.data[2].Count
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.data[3].Count
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.data[1].Config
-      value: 
-      objectReference: {fileID: 11400000, guid: 202df5e66c202be4dba6883c080b8a45, type: 2}
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.data[2].Config
-      value: 
-      objectReference: {fileID: 11400000, guid: cdcc2821594c20c45a920b48f65c443b, type: 2}
-    - target: {fileID: 3664716412117901231, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
-      propertyPath: perkBag.Array.data[3].Config
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b0e9c9131f49cd41af7e302589c617a, type: 2}
     - target: {fileID: 5820976370909660803, guid: 2c8ec0d675dda784795a2c96c8d57c8e, type: 3}
       propertyPath: m_Name
       value: SkeletonKingPerks

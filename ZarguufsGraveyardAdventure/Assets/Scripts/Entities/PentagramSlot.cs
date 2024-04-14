@@ -71,7 +71,7 @@ public class PentagramSlot : MonoBehaviour
                 {
                     return;
                 }
-                UIManager.main.ShowWorldTooltip("Press 1-8 to place item here.", transform.position);
+                UIManager.main.ShowWorldTooltip("Press 1-4 to place item here.", transform.position);
                 playerIsAtSlot = true;
             }
             else if (playerIsAtSlot)

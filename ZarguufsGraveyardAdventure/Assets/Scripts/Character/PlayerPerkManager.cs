@@ -38,7 +38,10 @@ public class PlayerPerkManager : MonoBehaviour
                 playerMovement.IncreaseWalkSpeed(perk.Value);
                 break;
             case PerkType.WeaponReach:
-                playerAiming.IncreaseWeaponRech(perk.Value);
+                playerAiming.IncreaseWeaponReach(perk.Value);
+                break;
+            case PerkType.WeaponKnockback:
+                playerAiming.IncreaseWeaponKnockback(perk.Value);
                 break;
             case PerkType.WeaponDamage:
                 playerAiming.IncreaseWeaponDamage(perk.Value);
