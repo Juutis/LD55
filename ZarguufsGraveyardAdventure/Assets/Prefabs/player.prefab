@@ -72,6 +72,7 @@ MonoBehaviour:
   hand: {fileID: 5296718524486389193}
   weaponRenderer: {fileID: 387286891151916015}
   animator: {fileID: 7849515491639526402}
+  damage: 2
   cooldownDuration: 0.5
 --- !u!1 &1287702569882341661
 GameObject:
@@ -171,6 +172,7 @@ GameObject:
   - component: {fileID: 6096919138765079918}
   - component: {fileID: 7327760838724979480}
   - component: {fileID: 7331939582090544572}
+  - component: {fileID: 8063026440031679927}
   - component: {fileID: 3407389812370697865}
   - component: {fileID: 6881794051561634713}
   - component: {fileID: 8409624685643141973}
@@ -214,6 +216,7 @@ MonoBehaviour:
   speed: 5
   dashSpeed: 10
   dashKey: 32
+  playerHealth: {fileID: 8063026440031679927}
 --- !u!114 &7331939582090544572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +231,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 2
   pickupKey: 101
+--- !u!114 &8063026440031679927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392652539679699869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087836e6e10f5e145b3f909c6d69fb2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  invulnerabilityDurationFromDamage: 0.2
+  invulnerabilityDurationFromDash: 0.2
 --- !u!50 &3407389812370697865
 Rigidbody2D:
   serializedVersion: 4
@@ -241,7 +259,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -355,14 +373,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6801042759813544315}
   - component: {fileID: 4427075529332783898}
-  - component: {fileID: 3520605753269871942}
+  - component: {fileID: 5009938355855908905}
   m_Layer: 0
   m_Name: weaponHitCollider
   m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6801042759813544315
 Transform:
   m_ObjectHideFlags: 0
@@ -372,7 +390,7 @@ Transform:
   m_GameObject: {fileID: 6837978962545394515}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.54, z: 0}
+  m_LocalPosition: {x: 0.163, y: -0.014, z: 0}
   m_LocalScale: {x: 1, y: 3.46, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -385,7 +403,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6837978962545394515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -432,8 +450,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3520605753269871942
-BoxCollider2D:
+--- !u!60 &5009938355855908905
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -476,8 +494,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.23472078, y: 0.12471698}
+      - {x: -0.081923276, y: 0.03326177}
+      - {x: -0.19073892, y: -0.045805242}
+      - {x: -0.5007407, y: -0.11082273}
+      - {x: -0.5115346, y: -0.12475596}
+      - {x: -0.19174273, y: -0.122232705}
+      - {x: 0.074999996, y: -0.08}
+      - {x: 0.058510974, y: -0.08484277}
+      - {x: 0.18144435, y: -0.031298693}
+      - {x: 0.19604057, y: 0.018374983}
+      - {x: 0.08, y: 0.07}
+      - {x: 0.059297793, y: 0.08745284}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6971597886911507040
 GameObject:
   m_ObjectHideFlags: 0

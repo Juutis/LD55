@@ -274,7 +274,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!114 &4882504681328055135
 MonoBehaviour:
@@ -510,6 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42e23912963829498597c176f59cbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldSpaceUI: {fileID: 104381961308267295}
+  popTextPrefab: {fileID: 5162092967069966145, guid: e3c24d164f2b0814fb27a25235f141c7, type: 3}
   uiHealth: {fileID: 7784514816577679894}
   uiTooltip: {fileID: 2336987128745515513}
   weaponActionSlot: {fileID: 4263627655190882722}

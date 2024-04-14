@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerAiming : MonoBehaviour
 {
+    public static PlayerAiming main;
+    void Awake()
+    {
+        main = this;
+    }
     [SerializeField]
     private GameObject aimingReticule;
 
@@ -15,6 +20,9 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private int damage = 2;
+    public int Damage { get { return damage; } }
 
     [SerializeField]
     private float cooldownDuration = 0.5f;
@@ -59,7 +67,7 @@ public class PlayerAiming : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("MouseButton 0");
+            //Debug.Log("MouseButton 0");
             if (isOnCooldown)
             {
                 return;
@@ -79,7 +87,7 @@ public class PlayerAiming : MonoBehaviour
 
     public void SwingAnimationFinished()
     {
-        Debug.Log("anim finished");
+        //Debug.Log("anim finished");
         //isSwinging = false;
     }
 
