@@ -14,20 +14,27 @@ public class EnemyDamage : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision2D)
     {
-        HandleDamageDealing(collision2D);
+        HandleDamageDealing(collision2D.gameObject, collision2D.contacts[0].point);
     }
     void OnCollisionStay2D(Collision2D collision2D)
     {
-        HandleDamageDealing(collision2D);
+        HandleDamageDealing(collision2D.gameObject, collision2D.contacts[0].point);
     }
     void OnCollisionExit2D(Collision2D collision2D)
     {
         damageCooldown = false;
     }
+    void OnTriggerEnter2D(Collider2D collider2D) {
+        HandleDamageDealing(collider2D.gameObject, collider2D.transform.position);
+    }
 
-    void HandleDamageDealing(Collision2D collision2D)
+    void HandleDamageDealing(GameObject other, Vector2 contactPoint)
     {
-        if (collision2D.gameObject.tag == "Player")
+        if (!enabled) {
+            return;
+        }
+        
+        if (other.tag == "Player")
         {
             if (damageCooldown)
             {
@@ -35,11 +42,11 @@ public class EnemyDamage : MonoBehaviour
             }
 
             //Debug.Log($"[Player] was hit by [{name}] for {damage} damage");
-            PlayerHealth playerHealth = collision2D.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             bool damageSuccesful = playerHealth.AddHealth(-damage);
             if (damageSuccesful)
             {
-                UIManager.main.ShowMessage(collision2D.GetContact(0).point, $"-{damage}", Color.red);
+                UIManager.main.ShowMessage(contactPoint, $"-{damage}", Color.red);
                 damageCooldown = true;
                 damageDealingTimer = 0f;
             }
