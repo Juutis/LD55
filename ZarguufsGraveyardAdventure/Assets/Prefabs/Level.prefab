@@ -1538,7 +1538,7 @@ MonoBehaviour:
   rangeToDespawn: 15
   spawnTime: 3
   spawnCountAtOnce: 1
-  maxSpawned: 5
+  maxSpawned: 10
   randomSpawnPrefab:
   - {fileID: 6269871736539813575, guid: 94f1c4f5b9d73e34c8cf71192f1222ca, type: 3}
   randomSpawnRadius: 2

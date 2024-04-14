@@ -40,13 +40,16 @@ public class Pentagram : MonoBehaviour
             slot.ConsumeItem();
         }
         Debug.Log($"We shall summon {recipe.BossType}!!!");
+
+        GameObject bossInstance = Instantiate(recipe.BossPrefab);
+        bossInstance.transform.position = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Player walked on the sacered pentagram!!!!!");
+            // Debug.Log("Player walked on the sacered pentagram!!!!!");
         }
     }
 }
@@ -64,6 +67,7 @@ public class PentagramRecipe
 {
     public List<InventoryItemType> RequiredItems;
     public BossType BossType;
+    public GameObject BossPrefab;
 
     public bool Match(List<InventoryItemConfig> items)
     {
