@@ -8,9 +8,6 @@ public class SkeletonKing : MonoBehaviour
     private SkeletonKingState state = SkeletonKingState.SPAWN;
     private CharacterAnimator animator;
 
-    
-
-
     // Start is called before the first frame update
     void Start()
     {

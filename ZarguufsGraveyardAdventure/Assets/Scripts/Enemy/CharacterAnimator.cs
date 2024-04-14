@@ -26,7 +26,7 @@ public class CharacterAnimator : MonoBehaviour
         anim.Play("walk");
     }
 
-    public void PlayCustomAnimation(String animName) {
-        anim.Play("animName");
+    public void PlayCustomAnimation(string animName) {
+        anim.Play(animName);
     }
 }
