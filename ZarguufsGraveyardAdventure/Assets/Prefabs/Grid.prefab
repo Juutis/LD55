@@ -3393,6 +3393,8 @@ MonoBehaviour:
     Prefab: {fileID: 451567681242107578, guid: c698b7fc83447f2499fb6586317b0707, type: 3}
   - Tile: {fileID: 11400000, guid: ea92f997ca04466489d90ea4df67d515, type: 2}
     Prefab: {fileID: 8849614837743054474, guid: a25b0ff1fad25bf46943c7c18b4d362e, type: 3}
+  - Tile: {fileID: 11400000, guid: 8a984a1c486efc5419be266443c942cf, type: 2}
+    Prefab: {fileID: 2106141079792874909, guid: a5f9c0ed8d31254468dc3b10eacc2567, type: 3}
 --- !u!1 &3196296408464608319
 GameObject:
   m_ObjectHideFlags: 0

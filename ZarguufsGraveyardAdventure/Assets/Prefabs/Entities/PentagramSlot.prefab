@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01521119967f5a74691d6a6b85c59b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 1
+  minDistance: 0.6
   animator: {fileID: 2932096162370957643}
 --- !u!95 &2932096162370957643
 Animator:

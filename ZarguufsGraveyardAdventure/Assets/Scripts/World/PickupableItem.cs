@@ -15,6 +15,8 @@ public class PickupableItem : MonoBehaviour
     [SerializeField]
     private SpriteRenderer highlightSpriteRenderer;
     [SerializeField]
+    private SpriteRenderer animSpriteRenderer;
+    [SerializeField]
     private bool initMyself;
     private PentagramSlot slot;
 
@@ -35,6 +37,7 @@ public class PickupableItem : MonoBehaviour
         this.config = config;
         spriteRenderer.sprite = config.Sprite;
         highlightSpriteRenderer.sprite = config.Sprite;
+        animSpriteRenderer.sprite = config.Sprite;
     }
 
     public void Lock()
