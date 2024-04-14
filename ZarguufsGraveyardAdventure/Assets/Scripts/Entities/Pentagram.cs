@@ -27,6 +27,10 @@ public class Pentagram : MonoBehaviour
     [SerializeField]
     private Transform bossSpawnPosition;
 
+    [SerializeField]
+    private Transform perkSpawnPosition;
+
+
     void Start()
     {
         slots = GetComponentsInChildren<PentagramSlot>().ToList();
@@ -102,6 +106,7 @@ public class Pentagram : MonoBehaviour
     {
         GameObject bossInstance = Instantiate(chosenRecipe.BossPrefab);
         bossInstance.transform.position = bossSpawnPosition.position;
+        bossInstance.GetComponent<EnemyHealth>().SetPerkDropPosition(perkSpawnPosition.position);
         chosenRecipe = null;
 
         recipeIsChosen = false;

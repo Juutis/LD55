@@ -48,5 +48,6 @@ public class PlayerPerkManager : MonoBehaviour
                 break;
         }
         appliedPerks.Add(perk);
+        UIManager.main.AddPerk(perk);
     }
 }

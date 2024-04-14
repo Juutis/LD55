@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private PerkGroup perkGroupPrefab;
 
+    private Vector2 perkDropPosition;
+
     public void GetHit(int damage)
     {
         UIManager.main.ShowMessage(transform.position, $"-{damage}", Color.white);
@@ -26,6 +28,11 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void SetPerkDropPosition(Vector2 dropPosition)
+    {
+        perkDropPosition = dropPosition;
     }
 
     public void Die()
@@ -68,7 +75,7 @@ public class EnemyHealth : MonoBehaviour
         if (perkGroupPrefab != null)
         {
             PerkGroup group = Instantiate(perkGroupPrefab, transform.parent);
-            group.transform.position = transform.position;
+            group.transform.position = perkDropPosition;
             group.Init();
         }
 
