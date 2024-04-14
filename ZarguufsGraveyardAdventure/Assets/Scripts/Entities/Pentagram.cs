@@ -9,7 +9,23 @@ public class Pentagram : MonoBehaviour
     [SerializeField]
     private List<PentagramRecipe> recipes = new();
 
+    [SerializeField]
+    private Animator animator;
+
     private List<PentagramSlot> slots = new();
+
+    private bool isSummoning = false;
+    private bool recipeIsChosen = false;
+    private PentagramRecipe chosenRecipe;
+
+    private List<PentagramSlot> filledSlots = new();
+
+    private float itemConsumeInterval = 0.2f;
+    private float itemConsumeTimer = 0f;
+    private float bossSummonDelay = 1f;
+
+    [SerializeField]
+    private Transform bossSpawnPosition;
 
     void Start()
     {
@@ -18,6 +34,10 @@ public class Pentagram : MonoBehaviour
     // Start is called before the first frame update
     public void CheckRecipes()
     {
+        if (recipeIsChosen || isSummoning)
+        {
+            return;
+        }
         List<InventoryItemConfig> items = slots.Where(slot => slot.Item != null).Select(slot => slot.Item.Config).ToList();
         if (items.Count == 5)
         {
@@ -25,7 +45,14 @@ public class Pentagram : MonoBehaviour
             {
                 if (recipe.Match(items))
                 {
-                    PerformRecipe(recipe);
+                    recipeIsChosen = true;
+                    foreach (var slot in slots)
+                    {
+                        slot.LockItem();
+                    }
+                    chosenRecipe = recipe;
+                    animator.Play("pentagramSummonStart");
+                    Invoke("PerformRecipe", bossSummonDelay);
                     break;
                 }
             }
@@ -33,16 +60,50 @@ public class Pentagram : MonoBehaviour
         }
     }
 
-    public void PerformRecipe(PentagramRecipe recipe)
+    public void PerformRecipe()
     {
-        foreach (var slot in slots)
-        {
-            slot.ConsumeItem();
-        }
-        Debug.Log($"We shall summon {recipe.BossType}!!!");
+        isSummoning = true;
+        filledSlots = new(slots);
+        ShuffleSlots(filledSlots);
 
-        GameObject bossInstance = Instantiate(recipe.BossPrefab);
-        bossInstance.transform.position = transform.position;
+        Debug.Log($"We shall summon {chosenRecipe.BossType}!!!");
+        itemConsumeTimer = 0f;
+    }
+
+    private void ShuffleSlots(List<PentagramSlot> slotList)
+    {
+        System.Random r = new System.Random();
+        slotList.Sort((x, y) => r.Next(-1, 1));
+    }
+
+
+    private void Update()
+    {
+        if (!isSummoning)
+        {
+            return;
+        }
+        itemConsumeTimer += Time.deltaTime;
+        if (itemConsumeTimer > itemConsumeInterval)
+        {
+            itemConsumeTimer = 0f;
+            PentagramSlot slot = filledSlots[0];
+            filledSlots.RemoveAt(0);
+            slot.ConsumeItem();
+            if (filledSlots.Count == 0)
+            {
+                Invoke("SummonBoss", bossSummonDelay);
+            }
+        }
+    }
+
+    private void SummonBoss()
+    {
+        GameObject bossInstance = Instantiate(chosenRecipe.BossPrefab);
+        bossInstance.transform.position = bossSpawnPosition.position;
+        chosenRecipe = null;
+        isSummoning = false;
+        recipeIsChosen = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

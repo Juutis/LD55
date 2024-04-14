@@ -15,16 +15,33 @@ public class PentagramSlot : MonoBehaviour
 
     private bool playerIsAtSlot = false;
 
+    private bool isLocked = false;
+
+    [SerializeField]
+    private Animator animator;
+
 
     void Start()
     {
         target = PlayerMovement.main.transform;
     }
 
+    public void LockItem()
+    {
+        isLocked = true;
+        item.Lock();
+    }
 
     public void ConsumeItem()
     {
+        animator.Play("pentagramSlotConsume");
+    }
+
+    public void ConsumeFinished()
+    {
         PickupableItemManager.main.KillItem(item);
+        Debug.Log("ConsumeFinished");
+        isLocked = false;
     }
 
     public void Clear()
@@ -35,6 +52,15 @@ public class PentagramSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isLocked)
+        {
+            if (playerIsAtSlot)
+            {
+                UIManager.main.HideWorldTooltip();
+                playerIsAtSlot = false;
+            }
+            return;
+        }
         checkTimer += Time.deltaTime;
         if (checkTimer > checkInterval)
         {
