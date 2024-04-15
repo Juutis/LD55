@@ -20,6 +20,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: uniqueDrops.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 112c933928f85f449a608ca1981f3ebf, type: 2}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
     - target: {fileID: 5271743888212201989, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

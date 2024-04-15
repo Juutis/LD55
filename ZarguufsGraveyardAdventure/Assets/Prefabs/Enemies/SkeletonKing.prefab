@@ -371,12 +371,24 @@ PrefabInstance:
       objectReference: {fileID: 5507525285660041521, guid: 743cb051df0911e4d9a7067014279b86, type: 3}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: uniqueDrops.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: 'uniqueDrops.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 56d5015e475eeae4ea63361a5d782a8a, type: 2}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: 'uniqueDrops.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
     - target: {fileID: 4739832594945053203, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: m_Name
       value: SkeletonKing
