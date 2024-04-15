@@ -106,6 +106,7 @@ public class Pentagram : MonoBehaviour
         {
             itemConsumeTimer = 0f;
             PentagramSlot slot = filledSlots[0];
+            SoundManager.main.PlaySound(GameSoundType.SummonConsume);
             filledSlots.RemoveAt(0);
             slot.ConsumeItem();
             if (filledSlots.Count == 0)

@@ -78,6 +78,7 @@ public class PlayerHealth : MonoBehaviour
             isInvulnerable = true;
             invulnerabilityTimer = 0f;
             invulnerabilityDuration = invulnerabilityDurationFromDamage;
+            SoundManager.main.PlaySound(GameSoundType.PlayerHurt);
         }
         if (healthAddition > 0 && health == maxHealth)
         {

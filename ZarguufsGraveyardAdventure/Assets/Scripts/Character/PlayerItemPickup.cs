@@ -74,6 +74,7 @@ public class PlayerItemPickup : MonoBehaviour
                     {
                         PickupableItemManager.main.KillItem(item);
                         nearbyItems.Remove(item);
+                        SoundManager.main.PlaySound(GameSoundType.CollectItem);
                     }
                 }
 

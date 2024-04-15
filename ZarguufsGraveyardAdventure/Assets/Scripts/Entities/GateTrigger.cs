@@ -95,5 +95,6 @@ public class GateTrigger : MonoBehaviour
         isOpen = true;
         UIManager.main.HideWorldTooltip();
         doorTrigger.enabled = false;
+        SoundManager.main.PlaySound(GameSoundType.OpenGate);
     }
 }

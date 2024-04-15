@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Transform worldSpaceUI;
     [SerializeField]
+    private GameObject gameUI;
+    [SerializeField]
     private UIPopText popTextPrefab;
 
     [SerializeField]
@@ -36,6 +38,11 @@ public class UIManager : MonoBehaviour
     private GameObject uiPerkArea;
     [SerializeField]
     private Transform uiPerkContainer;
+
+    public void TurnOnUI()
+    {
+        gameUI.SetActive(true);
+    }
 
     public void WeaponCooldown(float cooldownDuration)
     {

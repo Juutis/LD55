@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         UIManager.main.ShowMessage(transform.position, $"-{damage}", Color.white);
         health -= damage;
+        SoundManager.main.PlaySound(GameSoundType.SwingHit);
         if (health < 0)
         {
             Die();
@@ -68,6 +69,10 @@ public class EnemyHealth : MonoBehaviour
         if (bossEnemy != null)
         {
             bossEnemy.Die();
+        }
+        else
+        {
+            SoundManager.main.PlaySound(GameSoundType.SkeletonDie);
         }
 
         Destroy(gameObject);

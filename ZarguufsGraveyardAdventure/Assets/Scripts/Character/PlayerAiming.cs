@@ -115,6 +115,7 @@ public class PlayerAiming : MonoBehaviour
         isOnCooldown = true;
         cooldownTimer = 0f;
         UIManager.main.WeaponCooldown(cooldownDuration);
+        SoundManager.main.PlaySound(GameSoundType.WeaponSwing);
     }
 
     public void SwingAnimationFinished()

@@ -17,6 +17,19 @@ public class GameManager : MonoBehaviour
         aliveBosses.Add(boss);
     }
 
+    void Start()
+    {
+        Time.timeScale = 0f;
+        MusicManager.main.StartMusic(MusicType.Menu);
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        MusicManager.main.SwitchMusic(MusicType.Game);
+        UIManager.main.TurnOnUI();
+    }
+
     public void PlayerDie()
     {
         for (int index = aliveBosses.Count - 1; index >= 0; index -= 1)
