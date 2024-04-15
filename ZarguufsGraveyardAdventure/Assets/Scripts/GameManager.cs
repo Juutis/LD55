@@ -49,8 +49,10 @@ public class GameManager : MonoBehaviour
     {
         for (int index = aliveBosses.Count - 1; index >= 0; index -= 1)
         {
-            aliveBosses[index].Despawn();
-            aliveBosses.RemoveAt(index);
+            if (aliveBosses[index] != null) {
+                aliveBosses[index].Despawn();
+                aliveBosses.RemoveAt(index);
+            }
         }
         MusicManager.main.SwitchMusic(MusicType.Game);
         PlayerMovement.main.transform.position = playerSpawn.position;

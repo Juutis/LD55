@@ -133,9 +133,9 @@ public class MusicManager : MonoBehaviour
         fades.Add(fade);
     }
 
-    public void FadeOutMenuMusic(float duration = 0.5f)
+    public void FadeOutMusic(float duration = 0.5f)
     {
-        Fade(bossMusic, 0, duration);
+        Fade(currentMusic, 0, duration);
     }
 
     public void CrossFade(AudioSource fadeOutSource, AudioSource fadeInSource, float durationOut, float durationIn, float volume, float targetPitch)
