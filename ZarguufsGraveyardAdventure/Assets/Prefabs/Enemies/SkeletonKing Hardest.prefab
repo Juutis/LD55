@@ -124,12 +124,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: uniqueDrops.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: 'uniqueDrops.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 428ee33948e54034788c059067585f3d, type: 2}
+      objectReference: {fileID: 11400000, guid: b54cf5ffd8fcfe940bfaef9c46aeeba8, type: 2}
     - target: {fileID: 5271743888212201989, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

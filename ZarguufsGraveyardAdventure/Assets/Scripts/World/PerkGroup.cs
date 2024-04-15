@@ -63,17 +63,17 @@ public class PerkGroup : MonoBehaviour
                     bag.RemoveAt(i);
                 }
             }
-            Debug.Log(index);
+            //            Debug.Log(index);
             perks[index].Init(config);
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             RandomizePerks();
-        }
+        }*/
         checkTimer += Time.deltaTime;
         if (checkTimer > checkInterval)
         {

@@ -302,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: itemDrops.Array.data[0].Item
       value: 
-      objectReference: {fileID: 11400000, guid: 79e27c12cd7b90148a023555b99d9b71, type: 2}
+      objectReference: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: itemDrops.Array.data[0].DropChanceMultiplier
       value: 1

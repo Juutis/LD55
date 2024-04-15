@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private EnemyType enemyType;
 
+    private InventoryItemConfig forcedDrop;
+
 
     public void GetHit(int damage)
     {
@@ -30,9 +32,18 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void AddForcedDrop(InventoryItemConfig item)
+    {
+        forcedDrop = item;
+    }
+
 
     public void Die()
     {
+        if (forcedDrop != null)
+        {
+            PickupableItemManager.main.CreateItem(forcedDrop, transform.position);
+        }
         if (Random.Range(0, 1f) <= itemDropChance && itemDrops.Count > 0)
         {
             List<InventoryItemConfig> itemChoices = new();
@@ -72,19 +83,6 @@ public class EnemyHealth : MonoBehaviour
         if (bossEnemy != null)
         {
             bossEnemy.Die();
-            if (bossEnemy.BossType == BossType.BoneBoss)
-            {
-
-                GameManager.main.AddRecord(GameRecordType.KillSkeletonBoss, 1);
-            }
-            if (bossEnemy.BossType == BossType.DemonBoss)
-            {
-                GameManager.main.AddRecord(GameRecordType.KillDemonBoss, 1);
-            }
-            if (bossEnemy.BossType == BossType.NoseBoss)
-            {
-                GameManager.main.AddRecord(GameRecordType.KillNoseBoss, 1);
-            }
         }
         else
         {

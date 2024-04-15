@@ -55,9 +55,9 @@ public class PickupableItemManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        /*if (Input.GetKeyDown(KeyCode.Q))
         {
             CreateItem(testItem, PlayerMovement.main.transform.position);
-        }
+        }*/
     }
 }

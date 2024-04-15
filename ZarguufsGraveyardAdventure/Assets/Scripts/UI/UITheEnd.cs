@@ -43,7 +43,7 @@ public class UITheEnd : MonoBehaviour
         {
             if (gameRecord.Value == 0)
             {
-                //continue;
+                continue;
             }
             UIGameRecord uiGameRecord = Instantiate(uiGameRecordPrefab, gameRecordContainer);
             uiGameRecord.Init(gameRecord);
