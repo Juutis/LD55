@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NoseConfig
   m_EditorClassIdentifier: 
   Type: 110
-  Sprite: {fileID: -5637736640320054579, guid: a14a78832ae05d6449d751e681ee8d03, type: 3}
+  Sprite: {fileID: -766922039, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Count: 1
   IsStackable: 0
   IsHealth: 0
