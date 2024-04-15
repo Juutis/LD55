@@ -102,6 +102,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
+        GameManager.main.AddRecord(GameRecordType.PlayerDeath, 1);
         Time.timeScale = 0f;
         animator.Play("playerDie");
     }

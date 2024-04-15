@@ -1978,6 +1978,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 8414882895656032631}
+  gameRecords:
+  - Type: 1
+    Name: Gold
+    Description: Shiny!
+    Value: 0
+    Sprite: {fileID: 967575889, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  - Type: 2
+    Name: Bones
+    Description: Calcium
+    Value: 0
+    Sprite: {fileID: 421581823, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  - Type: 3
+    Name: Eyes
+    Description: Perceptive of you!
+    Value: 0
+    Sprite: {fileID: -516889496, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  - Type: 4
+    Name: Ectoplasm
+    Description: OooOOoo!
+    Value: 0
+    Sprite: {fileID: -559926333, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  - Type: 6
+    Name: Skeletons
+    Description: Easy to kill
+    Value: 0
+    Sprite: {fileID: -4128266061078067852, guid: 410ab77d96f5e014d8278f05bb7e8ade, type: 3}
+  - Type: 7
+    Name: Zombies
+    Description: Brains..
+    Value: 0
+    Sprite: {fileID: 1413631099325528104, guid: d9fca17de6f87a04aa0745c66c12b614, type: 3}
+  - Type: 8
+    Name: Ghosts
+    Description: Spooky!
+    Value: 0
+    Sprite: {fileID: -5564005308636624328, guid: 7d9e817d1e8eb32409f1d1a19f50932b, type: 3}
+  - Type: 9
+    Name: Summonings
+    Description: That's all rite!
+    Value: 0
+    Sprite: {fileID: -6684144895710132751, guid: 5613e81a7b2b7314e9a41b1118fb09a6, type: 3}
+  - Type: 10
+    Name: Boss (bone)
+    Description: Easy...
+    Value: 0
+    Sprite: {fileID: 6011560068649978663, guid: 474d391680b40a241b356963a065fd77, type: 3}
+  - Type: 11
+    Name: Boss (eye)
+    Description: Harder...
+    Value: 0
+    Sprite: {fileID: 4979687894668737693, guid: 474d391680b40a241b356963a065fd77, type: 3}
+  - Type: 12
+    Name: Boss (ectoplasm)
+    Description: Hardest!
+    Value: 0
+    Sprite: {fileID: -322335162315191301, guid: 474d391680b40a241b356963a065fd77, type: 3}
+  - Type: 13
+    Name: Deaths
+    Description: Bumps on the road!
+    Value: 0
+    Sprite: {fileID: -2138914557, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  - Type: 5
+    Name: Hearts
+    Description: Such a charmer!
+    Value: 0
+    Sprite: {fileID: -672091427, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
 --- !u!1 &6733811909054340689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,7 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171ba401578893647852cd554a514028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testItem: {fileID: 11400000, guid: cfdac375771b9fd45a92379c52059582, type: 2}
+  testItem: {fileID: 11400000, guid: d405391a339bb8342994d4c1e5234e10, type: 2}
   itemPrefab: {fileID: 3078986580085054408, guid: 7bb7eb76eb3e7cf45bd7faae1f5d4546, type: 3}
 --- !u!1 &8408208499545175136
 GameObject:

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,19 @@ public class GameManager : MonoBehaviour
     public void RegisterBoss(BossEnemy boss)
     {
         aliveBosses.Add(boss);
+    }
+
+    [SerializeField]
+    private List<GameRecord> gameRecords = new();
+    public List<GameRecord> GameRecords { get { return gameRecords; } }
+
+    public void AddRecord(GameRecordType type, int count)
+    {
+        GameRecord record = gameRecords.FirstOrDefault(record => record.Type == type);
+        if (record != null)
+        {
+            record.Add(count);
+        }
     }
 
     void Start()
@@ -37,10 +51,49 @@ public class GameManager : MonoBehaviour
             aliveBosses[index].Despawn();
             aliveBosses.RemoveAt(index);
         }
-
+        MusicManager.main.SwitchMusic(MusicType.Game);
         PlayerMovement.main.transform.position = playerSpawn.position;
         PlayerMovement.main.PlayerHealth.HealToFull();
         Debug.Log("You died!");
         Time.timeScale = 1f;
+    }
+
+    public void TheEnd()
+    {
+        Time.timeScale = 0f;
+        UITheEnd.main.Open();
+    }
+}
+
+public enum GameRecordType
+{
+    None,
+    CollectGold,
+    CollectBone,
+    CollectEye,
+    CollectEctoplasm,
+    CollectHeart,
+    KillSkeleton,
+    KillZombie,
+    KillGhost,
+    Summon,
+    KillSkeletonBoss,
+    KillDemonBoss,
+    KillNoseBoss,
+    PlayerDeath
+}
+
+[System.Serializable]
+public class GameRecord
+{
+    public GameRecordType Type;
+    public string Name;
+    public string Description;
+    public int Value;
+    public Sprite Sprite;
+
+    public void Add(int count)
+    {
+        Value += count;
     }
 }

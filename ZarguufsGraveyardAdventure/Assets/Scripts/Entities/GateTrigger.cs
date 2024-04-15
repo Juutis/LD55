@@ -53,7 +53,7 @@ public class GateTrigger : MonoBehaviour
                 }
             }
 
-            UIManager.main.ShowWorldTooltip("Press 1-8 to use a key.", transform.position);
+            UIManager.main.ShowWorldTooltip("Press 1-4 to use a key.", transform.position);
         }
     }
 

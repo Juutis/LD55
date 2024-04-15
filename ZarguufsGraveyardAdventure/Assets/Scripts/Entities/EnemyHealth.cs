@@ -15,6 +15,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private float itemDropChance;
 
+    [SerializeField]
+    private EnemyType enemyType;
+
 
     public void GetHit(int damage)
     {
@@ -69,14 +72,51 @@ public class EnemyHealth : MonoBehaviour
         if (bossEnemy != null)
         {
             bossEnemy.Die();
+            if (bossEnemy.BossType == BossType.BoneBoss)
+            {
+
+                GameManager.main.AddRecord(GameRecordType.KillSkeletonBoss, 1);
+            }
+            if (bossEnemy.BossType == BossType.DemonBoss)
+            {
+                GameManager.main.AddRecord(GameRecordType.KillDemonBoss, 1);
+            }
+            if (bossEnemy.BossType == BossType.NoseBoss)
+            {
+                GameManager.main.AddRecord(GameRecordType.KillNoseBoss, 1);
+            }
         }
         else
         {
-            SoundManager.main.PlaySound(GameSoundType.SkeletonDie);
+            if (enemyType == EnemyType.Skeleton)
+            {
+                SoundManager.main.PlaySound(GameSoundType.SkeletonDie);
+                GameManager.main.AddRecord(GameRecordType.KillSkeleton, 1);
+            }
+            else if (enemyType == EnemyType.Zombie)
+            {
+                SoundManager.main.PlaySound(GameSoundType.ZombieDie);
+                GameManager.main.AddRecord(GameRecordType.KillZombie, 1);
+            }
+            else if (enemyType == EnemyType.Ghost)
+            {
+                SoundManager.main.PlaySound(GameSoundType.GhostDie);
+                GameManager.main.AddRecord(GameRecordType.KillGhost, 1);
+
+            }
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
     }
+}
+
+
+public enum EnemyType
+{
+    Skeleton,
+    Zombie,
+    Ghost,
+    Boss
 }
 
 [System.Serializable]

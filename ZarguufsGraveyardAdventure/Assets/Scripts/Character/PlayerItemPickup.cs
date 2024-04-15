@@ -73,6 +73,7 @@ public class PlayerItemPickup : MonoBehaviour
                     if (itemWasPickedup)
                     {
                         PickupableItemManager.main.KillItem(item);
+                        RecordPickup(item.Config);
                         nearbyItems.Remove(item);
                         SoundManager.main.PlaySound(GameSoundType.CollectItem);
                     }
@@ -83,6 +84,35 @@ public class PlayerItemPickup : MonoBehaviour
                     UIManager.main.ShowMessage(transform.position, $"+{healthPickedUp}", Color.green);
                 }
             }
+        }
+    }
+
+    private void RecordPickup(InventoryItemConfig config)
+    {
+        GameRecordType recordType = GameRecordType.None;
+        if (config.Type == InventoryItemType.Bone)
+        {
+            recordType = GameRecordType.CollectBone;
+        }
+        else if (config.Type == InventoryItemType.Ectoplasm)
+        {
+            recordType = GameRecordType.CollectEctoplasm;
+        }
+        else if (config.Type == InventoryItemType.Heart)
+        {
+            recordType = GameRecordType.CollectHeart;
+        }
+        else if (config.Type == InventoryItemType.Eye)
+        {
+            recordType = GameRecordType.CollectEye;
+        }
+        else if (config.Type == InventoryItemType.Money)
+        {
+            recordType = GameRecordType.CollectGold;
+        }
+        if (recordType != GameRecordType.None)
+        {
+            GameManager.main.AddRecord(recordType, config.Count);
         }
     }
 
