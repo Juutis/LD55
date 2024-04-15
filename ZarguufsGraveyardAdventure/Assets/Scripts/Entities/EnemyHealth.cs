@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
         UIManager.main.ShowMessage(transform.position, $"-{damage}", Color.white);
         health -= damage;
         SoundManager.main.PlaySound(GameSoundType.SwingHit);
-        if (health < 0)
+        if (health <= 0)
         {
             died = true;
             Die();
