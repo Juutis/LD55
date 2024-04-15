@@ -94,7 +94,7 @@ public class PlayerAiming : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && Time.timeScale > 0f)
         {
             //Debug.Log("MouseButton 0");
             if (isSwinging || isOnCooldown)
