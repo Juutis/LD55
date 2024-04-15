@@ -106,7 +106,6 @@ public class Pentagram : MonoBehaviour
         {
             itemConsumeTimer = 0f;
             PentagramSlot slot = filledSlots[0];
-            SoundManager.main.PlaySound(GameSoundType.SummonConsume);
             filledSlots.RemoveAt(0);
             slot.ConsumeItem();
             if (filledSlots.Count == 0)
@@ -126,6 +125,25 @@ public class Pentagram : MonoBehaviour
         {
             bossEnemy.Init(this);
             GameManager.main.RegisterBoss(bossEnemy);
+            SoundManager.main.PlaySound(GameSoundType.SummonBossAppear);
+        }
+        PickupableItem pickupItem = bossInstance.GetComponent<PickupableItem>();
+        if (pickupItem)
+        {
+            pickupItem.RegisterPickupEffect(delegate
+            {
+                Unlock();
+            });
+            SoundManager.main.PlaySound(GameSoundType.SummonNiceThing);
+        }
+        PerkGroup perkGroup = bossInstance.GetComponent<PerkGroup>();
+        if (perkGroup)
+        {
+            perkGroup.RegisterPickupEffect(delegate
+            {
+                Unlock();
+            });
+            SoundManager.main.PlaySound(GameSoundType.SummonNiceThing);
         }
         chosenRecipe = null;
 
@@ -147,7 +165,8 @@ public enum BossType
     BoneBoss,
     DemonBoss,
     NoseBoss,
-    Key
+    Key,
+    PerkGroup
 }
 
 [System.Serializable]

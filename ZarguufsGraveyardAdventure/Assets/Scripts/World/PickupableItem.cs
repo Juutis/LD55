@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PickupableItem : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class PickupableItem : MonoBehaviour
     private bool isLocked = false;
     public bool IsLocked { get { return isLocked; } }
 
+    private UnityAction pickupAction;
+
     private void Start()
     {
         if (initMyself)
@@ -40,6 +43,11 @@ public class PickupableItem : MonoBehaviour
         animSpriteRenderer.sprite = config.Sprite;
     }
 
+    public void RegisterPickupEffect(UnityAction action)
+    {
+        pickupAction = action;
+    }
+
     public void Lock()
     {
         isLocked = true;
@@ -54,6 +62,13 @@ public class PickupableItem : MonoBehaviour
         if (slot != null)
         {
             slot.Clear();
+        }
+        else
+        {
+            if (pickupAction != null)
+            {
+                pickupAction.Invoke();
+            }
         }
         Destroy(gameObject);
     }

@@ -53,7 +53,9 @@ public enum GameSoundType
     PlayerHurt,
     SkeletonDie,
     ZombieDie,
-    GhostDie
+    GhostDie,
+    SummonNiceThing,
+    PentagramSlotFill
 }
 
 
