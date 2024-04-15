@@ -20,6 +20,9 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     [SerializeField]
     private float smellRange;
 
+    [SerializeField]
+    private bool hasSpawnAnimation;
+
     private Transform target;
 
     private Rigidbody2D rb;
@@ -50,7 +53,11 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         {
             target = PlayerMovement.main.transform;
         }
-        // EnableNavigation();
+
+        if (!hasSpawnAnimation)
+        {
+            EnableNavigation();
+        }
     }
 
     // Update is called once per frame
