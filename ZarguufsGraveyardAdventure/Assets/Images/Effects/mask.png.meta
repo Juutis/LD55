@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ebcb17e4351654a40b35845d2ebaa71f
+guid: ac394bd5f075ca346ac422392791f11b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8990993111062648010
-    second: endBackground_0
+      213: -1500434286138515679
+    second: mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: endBackground_0
+      name: mask_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac49fd2299c66cc70800000000000000
-      internalID: 8990993111062648010
+      spriteID: 12f95e567f26d2be0800000000000000
+      internalID: -1500434286138515679
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ae645d4c1fc0d214ca7edbf8cfb1c73a
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      endBackground_0: 8990993111062648010
+      mask_0: -1500434286138515679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

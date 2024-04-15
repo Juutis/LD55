@@ -50,7 +50,7 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         {
             target = PlayerMovement.main.transform;
         }
-        EnableNavigation();
+        // EnableNavigation();
     }
 
     // Update is called once per frame
@@ -73,6 +73,11 @@ public class RunTowardsTargetEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!navigationActive)
+        {
+            return;
+        }
+
         if (isKnockedBack)
         {
             return;
