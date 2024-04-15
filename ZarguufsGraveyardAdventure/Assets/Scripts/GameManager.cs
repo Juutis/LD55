@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         MusicManager.main.StartMusic(MusicType.Menu);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     public void StartGame()
