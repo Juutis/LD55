@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         if (record != null)
         {
             record.Add(count);
+            //            Debug.Log($"Added {count} to record {record.Name}! Now at {record.Value}.");
         }
     }
 

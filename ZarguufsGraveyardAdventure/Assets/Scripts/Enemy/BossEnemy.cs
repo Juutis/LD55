@@ -15,6 +15,7 @@ public class BossEnemy : MonoBehaviour
     public Animator animator;
 
     private Pentagram sourcePentagram;
+    private bool dead = false;
     public void Init(Pentagram pentagram)
     {
         sourcePentagram = pentagram;
@@ -22,6 +23,11 @@ public class BossEnemy : MonoBehaviour
     }
     public void Die()
     {
+        if (dead)
+        {
+            return;
+        }
+        dead = true;
         if (perkGroupPrefab != null)
         {
             PerkGroup group = Instantiate(perkGroupPrefab, transform.parent);
@@ -66,14 +72,7 @@ public class BossEnemy : MonoBehaviour
     public void DieAnimationFinished()
     {
         Debug.Log("Boss animation finished");
-        if (bossType == BossType.NoseBoss)
-        {
-            GameManager.main.TheEnd();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
     public void Despawn()

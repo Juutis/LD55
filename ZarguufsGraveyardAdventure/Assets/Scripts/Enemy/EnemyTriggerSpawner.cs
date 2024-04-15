@@ -19,6 +19,8 @@ public class EnemyTriggerSpawner : MonoBehaviour
 
     [SerializeField]
     private int spawnCountAtOnce;
+    [SerializeField]
+    private int itemCountAtOnce = 6;
 
     [SerializeField]
     private int maxSpawned;
@@ -36,6 +38,9 @@ public class EnemyTriggerSpawner : MonoBehaviour
     private List<GameObject> spawnList = new();
     private int spawnCount;
     private bool spawnStarted = false;
+
+    [SerializeField]
+    private InventoryItemConfig item;
 
     // Start is called before the first frame update
     void Start()
@@ -76,15 +81,41 @@ public class EnemyTriggerSpawner : MonoBehaviour
         }
     }
 
+    private void ShuffleIndexes(List<int> indexList)
+    {
+        System.Random r = new System.Random();
+        indexList.Sort((x, y) => r.Next(-1, 1));
+    }
+
     private void SpawnEnemies()
     {
+        int spawnCount = spawnCountAtOnce;
+        List<int> indexesWithItems = new();
+        for (int i = 0; i < spawnCountAtOnce; i++)
+        {
+            indexesWithItems.Add(i);
+        }
+        ShuffleIndexes(indexesWithItems);
+        while (indexesWithItems.Count > itemCountAtOnce)
+        {
+            indexesWithItems.Remove(indexesWithItems.Count - 1);
+        }
+        Debug.Log($"{indexesWithItems.Count} skeletons should have item! ({itemCountAtOnce})");
         for (int i = 0; i < spawnCountAtOnce; i++)
         {
             Transform randomSpawnLocation = spawnTransforms[Random.Range(0, spawnTransforms.Count)];
             GameObject prefab = randomSpawnPrefab[Random.Range(0, randomSpawnPrefab.Count)];
 
+
             GameObject instance = Instantiate(prefab);
             instance.transform.parent = randomSpawnLocation;
+
+            if (indexesWithItems.Contains(i))
+            {
+                EnemyHealth enemyHealth = instance.GetComponent<EnemyHealth>();
+                enemyHealth.AddForcedDrop(item);
+                Debug.Log($"added forced drop to {instance}");
+            }
 
             if (normalizeSpawnRadius)
             {

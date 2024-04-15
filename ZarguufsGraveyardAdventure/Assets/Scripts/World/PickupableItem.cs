@@ -69,6 +69,10 @@ public class PickupableItem : MonoBehaviour
             {
                 pickupAction.Invoke();
             }
+            if (config.Type == InventoryItemType.Nose)
+            {
+                GameManager.main.TheEnd();
+            }
         }
         Destroy(gameObject);
     }
