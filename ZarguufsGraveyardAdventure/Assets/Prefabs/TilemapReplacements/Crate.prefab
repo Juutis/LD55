@@ -104,8 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   itemDrops:
-  - Item: {fileID: 11400000, guid: 73e18a372d194484982bad304bd34f80, type: 2}
+  - Item: {fileID: 11400000, guid: 4c8dd89ba27d6e7478f4630df373ac7f, type: 2}
     DropChanceMultiplier: 1
+  uniqueDrops: []
   itemDropChance: 1
 --- !u!114 &7592180842906540854
 MonoBehaviour:

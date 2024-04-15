@@ -128,4 +128,5 @@ public enum InventoryItemType
     Eye = 70,
     Hand = 80,
     StartKey = 90,
+    Money = 100,
 }
