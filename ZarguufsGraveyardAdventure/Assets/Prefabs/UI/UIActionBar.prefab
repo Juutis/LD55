@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3104639255082501735, guid: 3ade0109bcc7d2c4b9e6d5bf7fa13752, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 824487542, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
     - target: {fileID: 4021111728804159479, guid: 3ade0109bcc7d2c4b9e6d5bf7fa13752, type: 3}
       propertyPath: m_Name
       value: UIActionSlot (1)

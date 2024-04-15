@@ -41,7 +41,8 @@ public class UIHealth : MonoBehaviour
             health = maxHealth;
         }
         this.health = health;
-        imgHealth.fillAmount = (float)health / maxHealth;
+        float fillAmountScaleBecauseSpriteIsNot100percentOfImageHeight = 0.7f;
+        imgHealth.fillAmount = fillAmountScaleBecauseSpriteIsNot100percentOfImageHeight * ((float)health / maxHealth);
         txtHealth.text = $"{health}/{maxHealth}";
     }
 }
