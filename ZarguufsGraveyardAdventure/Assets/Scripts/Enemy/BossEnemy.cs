@@ -11,6 +11,7 @@ public class BossEnemy : MonoBehaviour
     public void Init(Pentagram pentagram)
     {
         sourcePentagram = pentagram;
+        MusicManager.main.SwitchMusic(MusicType.Boss);
     }
     public void Die()
     {
@@ -21,6 +22,7 @@ public class BossEnemy : MonoBehaviour
             group.transform.position = sourcePentagram.PerkSpawnPosition.position;
             group.Init();
         }
+        MusicManager.main.SwitchMusic(MusicType.Game);
         Destroy(gameObject);
     }
 

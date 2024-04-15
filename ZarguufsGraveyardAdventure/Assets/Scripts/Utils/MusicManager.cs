@@ -90,6 +90,7 @@ public class MusicManager : MonoBehaviour
             newSource.volume = volumeBoss;
         }
         CrossFade(currentMusic, newSource, crossfadeDurationOut, crossfadeDurationIn, newSource.volume, 1.0f);
+        currentMusic = newSource;
     }
 
 
