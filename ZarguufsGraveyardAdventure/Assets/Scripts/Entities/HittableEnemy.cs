@@ -43,7 +43,10 @@ public class HittableEnemy : MonoBehaviour
         {
             isInvulnerable = true;
             // Debug.Log($"[{name}] was hit by [{collider2D.name}]");
-            enemyHealth.GetHit(PlayerAiming.main.Damage);
+            enemyHealth = GetComponent<EnemyHealth>();
+            if (enemyHealth != null && enemyHealth.enabled) {
+                enemyHealth.GetHit(PlayerAiming.main.Damage);
+            }
             /*Debug.Log($"Forcing u back at {-body.velocity * knockBackStrength}!");
             body.AddForce(-body.velocity * knockBackStrength, ForceMode2D.Impulse);*/
             if (runTowards != null)
