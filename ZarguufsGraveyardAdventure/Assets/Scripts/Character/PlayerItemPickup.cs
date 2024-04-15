@@ -52,10 +52,10 @@ public class PlayerItemPickup : MonoBehaviour
                     bool itemWasPickedup = false;
                     if (item.IsHealth())
                     {
-                        if (PlayerMovement.main.PlayerHealth.AddHealth(1))
+                        if (PlayerMovement.main.PlayerHealth.AddHealth(item.Config.Count))
                         {
                             itemWasPickedup = true;
-                            healthPickedUp++;
+                            healthPickedUp += item.Config.Count;
                         }
                     }
                     else

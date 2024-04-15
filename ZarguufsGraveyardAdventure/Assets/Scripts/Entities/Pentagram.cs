@@ -166,7 +166,8 @@ public enum BossType
     DemonBoss,
     NoseBoss,
     Key,
-    PerkGroup
+    PerkGroup,
+    Egg
 }
 
 [System.Serializable]

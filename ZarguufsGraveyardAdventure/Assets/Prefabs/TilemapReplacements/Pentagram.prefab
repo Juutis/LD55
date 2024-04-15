@@ -114,6 +114,9 @@ MonoBehaviour:
   - RequiredItems: 1400000014000000140000001400000014000000
     BossType: 3
     BossPrefab: {fileID: 1719020418580028113, guid: 6debcb9c5a9b0b04fa820ec7379870ae, type: 3}
+  - RequiredItems: 1400000046000000640000000a000000
+    BossType: 6
+    BossPrefab: {fileID: 944825086466751980, guid: 5f5f8a02a2ffe954fb1bca233fbd3729, type: 3}
   animator: {fileID: 8468162229421574777}
   bossSpawnPosition: {fileID: 8723965146399060928}
   perkSpawnPosition: {fileID: 8324245385292776576}
