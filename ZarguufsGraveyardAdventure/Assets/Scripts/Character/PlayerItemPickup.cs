@@ -60,7 +60,10 @@ public class PlayerItemPickup : MonoBehaviour
                     }
                     else
                     {
-                        if (item.Config.IsUnique)
+                        if (item.Config.Type == InventoryItemType.Nose) {
+                            itemWasPickedup = true;
+                        }
+                        else if (item.Config.IsUnique)
                         {
                             itemWasPickedup = Inventory.main.AddUniqueItem(item.Config);
                         }
