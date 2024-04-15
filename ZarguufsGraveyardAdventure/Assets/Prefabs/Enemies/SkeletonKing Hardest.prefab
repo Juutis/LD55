@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: bossType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -3637700500737573740, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: perkGroupPrefab
+      value: 
+      objectReference: {fileID: 5507525285660041521, guid: b0e59f1757c22de4fb248f1ab8631bfe, type: 3}
     - target: {fileID: 2956452575474641953, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: noseBossNose
       value: 

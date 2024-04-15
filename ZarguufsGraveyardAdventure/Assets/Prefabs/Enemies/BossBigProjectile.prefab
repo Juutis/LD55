@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7144989493529238686}
   - component: {fileID: 8112089146178761263}
   - component: {fileID: 4533392959483449330}
+  - component: {fileID: 3185567237520048411}
   m_Layer: 0
   m_Name: BossBigProjectile
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  damage: 2
   sprite: {fileID: 724698879982500533}
 --- !u!50 &4533392959483449330
 Rigidbody2D:
@@ -75,6 +77,64 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!60 &3185567237520048411
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139344761090989787}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.7079273, y: 0.47400922}
+    oldSize: {x: 0.875, y: 2}
+    newSize: {x: 0.875, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.6194364, y: 1.0519816}
+      - {x: -0.33680388, y: 0.77210706}
+      - {x: -0.07240605, y: 0.2971322}
+      - {x: -0.061814517, y: -0.1808717}
+      - {x: -0.19480744, y: -0.54775083}
+      - {x: -0.42493665, y: -0.9156018}
+      - {x: -0.27808177, y: -0.94801843}
+      - {x: 0.024595276, y: -0.6956852}
+      - {x: 0.24098894, y: -0.25374842}
+      - {x: 0.19478244, y: 0.3632528}
+      - {x: -0.20624885, y: 0.88989854}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &7447581684448527800
 PrefabInstance:
   m_ObjectHideFlags: 0

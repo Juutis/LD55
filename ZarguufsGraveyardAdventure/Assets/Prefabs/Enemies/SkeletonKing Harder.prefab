@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: bossType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -3637700500737573740, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: perkGroupPrefab
+      value: 
+      objectReference: {fileID: 5507525285660041521, guid: 08897c20cddad054faa1296a61f40f9b, type: 3}
     - target: {fileID: 2956452575474641953, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: 'availableAttacks.Array.data[0]'
       value: 7
