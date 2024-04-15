@@ -366,6 +366,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: enemyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: perkGroupPrefab
       value: 
       objectReference: {fileID: 5507525285660041521, guid: 743cb051df0911e4d9a7067014279b86, type: 3}
@@ -405,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6011560068649978663, guid: 474d391680b40a241b356963a065fd77, type: 3}
+    - target: {fileID: 5532712681583304942, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6098358570485454615, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.165727
@@ -479,6 +487,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1569185393218722713, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
   m_PrefabInstance: {fileID: 2128311384709465362}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &838514171366254150 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1597168043684635476, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+  m_PrefabInstance: {fileID: 2128311384709465362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6651257326730974977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4739832594945053203, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
@@ -516,3 +529,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perkGroupPrefab: {fileID: 5507525285660041521, guid: 743cb051df0911e4d9a7067014279b86, type: 3}
+  bossType: 1
+  animator: {fileID: 838514171366254150}

@@ -83,7 +83,7 @@ public class Pentagram : MonoBehaviour
         isSummoning = true;
         filledSlots = new(slots);
         ShuffleSlots(filledSlots);
-
+        GameManager.main.AddRecord(GameRecordType.Summon, 1);
         Debug.Log($"We shall summon {chosenRecipe.BossType}!!!");
         itemConsumeTimer = 0f;
     }

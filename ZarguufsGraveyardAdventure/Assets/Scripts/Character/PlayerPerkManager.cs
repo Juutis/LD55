@@ -13,6 +13,7 @@ public class PlayerPerkManager : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerAiming playerAiming;
     private PlayerHealth playerHealth;
+    public List<PerkConfig> AppliedPerks { get { return appliedPerks; } }
     void Start()
     {
         playerMovement = PlayerMovement.main;

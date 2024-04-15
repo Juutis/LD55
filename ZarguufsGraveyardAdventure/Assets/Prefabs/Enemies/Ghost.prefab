@@ -315,6 +315,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: d9fcb747f6c5cfd4499d4e59b7e88291, type: 2}
     - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
+      propertyPath: enemyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904078932840020731, guid: 69f3517fd7d64e14fb33671e191495fa, type: 3}
       propertyPath: itemDropChance
       value: 0.333
       objectReference: {fileID: 0}
