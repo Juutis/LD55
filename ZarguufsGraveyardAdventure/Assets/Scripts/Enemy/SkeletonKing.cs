@@ -161,6 +161,7 @@ public class SkeletonKing : MonoBehaviour
 
     public void SpawnCallback() {
         animator.Idle();
+        GetComponent<BossEnemy>().SpawnFinished();
         state = SkeletonKingState.IDLE;
         idleTimer = Time.time + 0.25f;
     }

@@ -19,7 +19,33 @@ public class BossEnemy : MonoBehaviour
     public void Init(Pentagram pentagram)
     {
         sourcePentagram = pentagram;
-        MusicManager.main.SwitchMusic(MusicType.Boss);
+        MusicManager.main.FadeOutMusic();
+        EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.enabled = false;
+        }
+        HittableEnemy hittableEnemy = GetComponent<HittableEnemy>();
+        if (hittableEnemy != null)
+        {
+            hittableEnemy.enabled = false;
+        }
+        Debug.Log("SpawnStarted");
+    }
+
+    public void SpawnFinished() {
+        Debug.Log("SpawnFinished");
+        EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.enabled = true;
+        }
+        HittableEnemy hittableEnemy = GetComponent<HittableEnemy>();
+        if (hittableEnemy != null)
+        {
+            hittableEnemy.enabled = true;
+        }
+        MusicManager.main.StartMusic(MusicType.Boss);
     }
     public void Die()
     {
