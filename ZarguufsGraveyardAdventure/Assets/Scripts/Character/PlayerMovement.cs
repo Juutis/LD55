@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     private Vector2 dashDirection = Vector2.right;
+    private Vector2 prevDir;
 
     // Start is called before the first frame update
     void Start()
@@ -122,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
         if (body.velocity.magnitude > 0.01f)
         {
             anim.SetBool("Walk", true);
-            dashDirection = body.velocity.normalized;
+            dashDirection = prevDir;
         }
         else
         {
@@ -138,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
             dir = dashDirection;
         }
         body.velocity = dir * currentSpeed;
+        prevDir = dir;
     }
 
     internal void ReduceDashCooldown(float value)
