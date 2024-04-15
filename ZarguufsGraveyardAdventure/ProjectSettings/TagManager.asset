@@ -17,8 +17,8 @@ TagManager:
   - Player
   - DashingPlayer
   - Enemy
-  - 
-  - 
+  - Projectile
+  - PlayerDamage
   - 
   - 
   - 

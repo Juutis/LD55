@@ -41,8 +41,8 @@ public class EnemyDamage : MonoBehaviour
                 return;
             }
 
-            //Debug.Log($"[Player] was hit by [{name}] for {damage} damage");
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            // Debug.Log($"[Player] was hit by [{name}] for {damage} damage");
+            PlayerHealth playerHealth = PlayerMovement.main.PlayerHealth;
             bool damageSuccesful = playerHealth.AddHealth(-damage);
             if (damageSuccesful)
             {
