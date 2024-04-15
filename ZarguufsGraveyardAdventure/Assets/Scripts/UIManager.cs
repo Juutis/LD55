@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class UIManager : MonoBehaviour
     private Transform worldSpaceUI;
     [SerializeField]
     private GameObject gameUI;
+    [SerializeField]
+    private GameObject mainMenu;
     [SerializeField]
     private UIPopText popTextPrefab;
 
@@ -38,6 +41,11 @@ public class UIManager : MonoBehaviour
     private GameObject uiPerkArea;
     [SerializeField]
     private Transform uiPerkContainer;
+
+    void Start()
+    {
+        mainMenu.SetActive(true);
+    }
 
     public void TurnOnUI()
     {
