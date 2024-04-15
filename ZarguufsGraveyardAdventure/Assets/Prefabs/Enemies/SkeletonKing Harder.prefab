@@ -29,6 +29,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: uniqueDrops.Array.size
       value: 4
       objectReference: {fileID: 0}

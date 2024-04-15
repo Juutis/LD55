@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: health
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3145576286018404329, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: uniqueDrops.Array.size
