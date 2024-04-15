@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PerkGroup : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PerkGroup : MonoBehaviour
     [SerializeField]
     private KeyCode keyCode = KeyCode.E;
 
+    private UnityAction pickupAction;
+
     void Start()
     {
         Init();
@@ -33,6 +36,11 @@ public class PerkGroup : MonoBehaviour
         perks = GetComponentsInChildren<PerkPickup>().ToList();
         target = PlayerMovement.main.transform;
         RandomizePerks();
+    }
+
+    public void RegisterPickupEffect(UnityAction action)
+    {
+        pickupAction = action;
     }
 
     private void RandomizePerks()
@@ -107,6 +115,10 @@ public class PerkGroup : MonoBehaviour
                 }
                 UIManager.main.HideTooltip();
                 UIManager.main.HideWorldTooltip();
+                if (pickupAction != null)
+                {
+                    pickupAction.Invoke();
+                }
                 Destroy(gameObject);
             }
         }

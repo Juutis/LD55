@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0cc58ae767c54947bd399e1658600bd, type: 3}
   m_Name: MoneyConfig
   m_EditorClassIdentifier: 
-  Type: 60
-  Sprite: {fileID: -672091427, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
+  Type: 100
+  Sprite: {fileID: 967575889, guid: 794a48d4ca1636a4bb9aa7fac3c7a39e, type: 3}
   Count: 1
   IsStackable: 1
-  IsHealth: 1
+  IsHealth: 0
   IsUnique: 0
   IsKey: 0

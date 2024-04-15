@@ -16,6 +16,8 @@ public class UITooltip : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI txtMessage;
+    [SerializeField]
+    private float offsetY = -2f;
 
     private void Start()
     {
@@ -34,7 +36,9 @@ public class UITooltip : MonoBehaviour
     {
         container.SetActive(true);
         txtMessage.text = message;
-        container.transform.position = position;
+        Vector2 newPos = position;
+        newPos.y += offsetY;
+        container.transform.position = newPos;
     }
     public void Hide()
     {

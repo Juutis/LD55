@@ -791,7 +791,7 @@ RectTransform:
   m_GameObject: {fileID: 3583716892126584063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3942834319807716928}
@@ -1831,7 +1831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 983487782570517725, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 983487782570517725, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1884,6 +1884,18 @@ PrefabInstance:
     - target: {fileID: 1151723619047453357, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
       propertyPath: m_Name
       value: UITooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443189346967076420, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443189346967076420, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
+      propertyPath: m_Color.g
+      value: 0.23529413
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443189346967076420, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8352942
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1944,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 983487782570517725, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 983487782570517725, guid: 700b00698c66ae5418264de7ca0b3327, type: 3}
       propertyPath: m_LocalPosition.x

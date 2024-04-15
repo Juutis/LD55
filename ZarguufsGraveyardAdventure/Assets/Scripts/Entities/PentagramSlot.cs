@@ -7,7 +7,7 @@ public class PentagramSlot : MonoBehaviour
     private Transform target;
     [SerializeField]
     private float minDistance = 0.5f;
-    private float checkInterval = 0.2f;
+    private float checkInterval = 0.1f;
     private float checkTimer = 0f;
 
     private PickupableItem item = null;
@@ -39,6 +39,7 @@ public class PentagramSlot : MonoBehaviour
 
     public void ConsumeFinished()
     {
+        SoundManager.main.PlaySound(GameSoundType.SummonConsume);
         PickupableItemManager.main.KillItem(item);
         Debug.Log("ConsumeFinished");
     }
@@ -96,6 +97,7 @@ public class PentagramSlot : MonoBehaviour
                     {
                         PickupableItem pickupItem = PickupableItemManager.main.CreateItem(itemConfig, transform.position);
                         pickupItem.SetSlot(this);
+                        SoundManager.main.PlaySound(GameSoundType.PentagramSlotFill);
                         item = pickupItem;
                         Pentagram pentagram = transform.parent.GetComponent<Pentagram>();
                         pentagram.CheckRecipes();

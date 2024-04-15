@@ -102,6 +102,9 @@ MonoBehaviour:
   - RequiredItems: 5000000050000000500000005000000050000000
     BossType: 4
     BossPrefab: {fileID: 944825086466751980, guid: e0ed7914da6a12749bb844577ca77bad, type: 3}
+  - RequiredItems: 6400000064000000640000006400000064000000
+    BossType: 5
+    BossPrefab: {fileID: 8049274816646702369, guid: 610f46fab7193754a883d9e53e6fd6d9, type: 3}
   - RequiredItems: 0a0000000a0000000a0000000a0000000a000000
     BossType: 1
     BossPrefab: {fileID: 6651257326730974977, guid: a06016a90d4385044b3339040c75a94b, type: 3}
