@@ -37,7 +37,9 @@ public class EnemyTriggerSpawner : MonoBehaviour
     private float lastSpawnTime;
     private List<GameObject> spawnList = new();
     private int spawnCount;
+    private int killed;
     private bool spawnStarted = false;
+    private bool spawnEnded = false;
 
     [SerializeField]
     private InventoryItemConfig item;
@@ -59,10 +61,16 @@ public class EnemyTriggerSpawner : MonoBehaviour
             spawnStarted = false;
         }
 
-        if (despawnTriggers.Any(x => x.InsideTrigger()))
+        /*if (despawnTriggers.Any(x => x.InsideTrigger()))
         {
             spawnStarted = false;
             spawnList.ForEach(x => Destroy(x));
+            spawnCount = 0;
+        }*/
+
+        if (killed >= spawnCount)
+        {
+            killed = 0;
             spawnCount = 0;
         }
 
@@ -89,7 +97,6 @@ public class EnemyTriggerSpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        int spawnCount = spawnCountAtOnce;
         List<int> indexesWithItems = new();
         for (int i = 0; i < spawnCountAtOnce; i++)
         {
@@ -110,9 +117,13 @@ public class EnemyTriggerSpawner : MonoBehaviour
             GameObject instance = Instantiate(prefab);
             instance.transform.parent = randomSpawnLocation;
 
+            EnemyHealth enemyHealth = instance.GetComponent<EnemyHealth>();
+            enemyHealth.AddDeathCallback(delegate
+            {
+                killed += 1;
+            });
             if (indexesWithItems.Contains(i))
             {
-                EnemyHealth enemyHealth = instance.GetComponent<EnemyHealth>();
                 enemyHealth.AddForcedDrop(item);
                 Debug.Log($"added forced drop to {instance}");
             }

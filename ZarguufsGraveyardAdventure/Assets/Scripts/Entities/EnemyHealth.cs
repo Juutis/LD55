@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -21,13 +23,20 @@ public class EnemyHealth : MonoBehaviour
     private InventoryItemConfig forcedDrop;
 
 
+    private bool died = false;
+
     public void GetHit(int damage)
     {
+        if (died)
+        {
+            return;
+        }
         UIManager.main.ShowMessage(transform.position, $"-{damage}", Color.white);
         health -= damage;
         SoundManager.main.PlaySound(GameSoundType.SwingHit);
         if (health < 0)
         {
+            died = true;
             Die();
         }
     }
@@ -35,6 +44,12 @@ public class EnemyHealth : MonoBehaviour
     public void AddForcedDrop(InventoryItemConfig item)
     {
         forcedDrop = item;
+    }
+
+    private UnityAction deathCallback;
+    public void AddDeathCallback(UnityAction deathCallback)
+    {
+        this.deathCallback = deathCallback;
     }
 
 
@@ -77,6 +92,10 @@ public class EnemyHealth : MonoBehaviour
 
                 PickupableItemManager.main.CreateItem(item, transform.position + pos);
             }
+        }
+        if (deathCallback != null)
+        {
+            deathCallback.Invoke();
         }
 
         BossEnemy bossEnemy = GetComponent<BossEnemy>();
