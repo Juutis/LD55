@@ -18,8 +18,8 @@ public class BossEnemy : MonoBehaviour
         if (perkGroupPrefab != null)
         {
             PerkGroup group = Instantiate(perkGroupPrefab, transform.parent);
-            sourcePentagram.Unlock();
-            group.transform.position = sourcePentagram.PerkSpawnPosition.position;
+            sourcePentagram?.Unlock();
+            group.transform.position = sourcePentagram?.PerkSpawnPosition?.position ?? transform.position;
             group.Init();
         }
         MusicManager.main.SwitchMusic(MusicType.Game);

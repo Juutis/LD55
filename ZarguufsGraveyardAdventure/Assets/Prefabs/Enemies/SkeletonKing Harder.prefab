@@ -88,6 +88,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkeletonKing Harder
       objectReference: {fileID: 0}
+    - target: {fileID: 7188311681757704928, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: aggroRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188311681757704928, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: smellRange
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
