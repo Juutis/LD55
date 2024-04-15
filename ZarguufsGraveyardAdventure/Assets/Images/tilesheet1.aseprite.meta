@@ -155,7 +155,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 112
-        width: 240
+        width: 256
         height: 144
       spriteId: 787a5f219e81875458c594352449d7fc
     linkedCells: []
