@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5345646770959642042}
   - component: {fileID: 833583108163025293}
+  - component: {fileID: 186594154216154479}
   m_Layer: 0
   m_Name: nosebossnose_0
   m_TagString: Untagged
@@ -86,6 +87,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &186594154216154479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623884524933095187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e787f7d52c72cf040be2a5bb71ea4a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noseRenderer: {fileID: 833583108163025293}
 --- !u!1001 &5446308506021432784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,6 +112,10 @@ PrefabInstance:
       propertyPath: bossType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2956452575474641953, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: noseBossNose
+      value: 
+      objectReference: {fileID: 186594154216154479}
     - target: {fileID: 2956452575474641953, guid: a06016a90d4385044b3339040c75a94b, type: 3}
       propertyPath: availableAttacks.Array.size
       value: 6
@@ -186,6 +204,10 @@ PrefabInstance:
       propertyPath: smellRange
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7188311681757704928, guid: a06016a90d4385044b3339040c75a94b, type: 3}
+      propertyPath: noseBossNose
+      value: 
+      objectReference: {fileID: 186594154216154479}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

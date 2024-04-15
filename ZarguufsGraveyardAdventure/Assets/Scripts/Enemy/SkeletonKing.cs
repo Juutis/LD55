@@ -38,6 +38,9 @@ public class SkeletonKing : MonoBehaviour
     [SerializeField]
     private SkeletonKingState[] availableAttacks;
 
+    [SerializeField]
+    private NoseBossNose noseBossNose;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -217,6 +220,16 @@ public class SkeletonKing : MonoBehaviour
     private SkeletonKingState nextAttack() {
         var t = Random.Range(0, availableAttacks.Length);
         return availableAttacks[t];
+    }
+
+    private void HideNose()
+    {
+        noseBossNose?.Hide();
+    }
+
+    public void ShowNose()
+    {
+        noseBossNose?.Show();
     }
 }
 

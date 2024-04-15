@@ -23,6 +23,9 @@ public class RunTowardsTargetEnemy : MonoBehaviour
     [SerializeField]
     private bool hasSpawnAnimation;
 
+    [SerializeField]
+    private NoseBossNose noseBossNose;
+
     private Transform target;
 
     private Rigidbody2D rb;
@@ -122,10 +125,12 @@ public class RunTowardsTargetEnemy : MonoBehaviour
         if (targetDirection.x > 0.1f)
         {
             sprite.flipX = true;
+            noseBossNose?.FlipNose(true);
         }
         else if (targetDirection.x < -0.1f)
         {
             sprite.flipX = false;
+            noseBossNose?.FlipNose(false);
         }
     }
 
