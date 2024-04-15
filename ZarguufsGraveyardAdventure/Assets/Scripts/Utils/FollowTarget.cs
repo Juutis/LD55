@@ -13,6 +13,12 @@ public class FollowTarget : MonoBehaviour
     [SerializeField]
     private bool followZ = false;
 
+    [SerializeField]
+    private bool useOffset = false;
+    [SerializeField]
+    private Vector3 offset;
+
+
     public void SetTarget(Transform target)
     {
         this.target = target;
@@ -36,6 +42,10 @@ public class FollowTarget : MonoBehaviour
         if (followZ)
         {
             newPos.z = target.position.z;
+        }
+        if (useOffset)
+        {
+            newPos += offset;
         }
         transform.position = newPos;
     }
